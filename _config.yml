@@ -1,0 +1,16 @@
+# SITE CONFIGURATION
+
+url: "https://mlogdberg.github.io/" # the base hostname & protocol for your site
+title: "Mattias Lögdberg"
+description: "Mattias Blog"
+permalink: /:title/	
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+paginate: 10
+paginate_path: "page/:num"
+encoding: utf-8
+include: ['_pages']
+markdown: kramdown
+gems: [jekyll-paginate]
+
+
+
