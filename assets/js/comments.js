@@ -1,5 +1,5 @@
  /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'ibiz-solutions';
+    var disqus_shortname = 'mlogdberg';
     
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
