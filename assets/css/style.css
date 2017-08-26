@@ -1,0 +1,7 @@
+	body{background-color:#fff; font-family: 'Droid Sans', sans-serif; color:#444;}
+	.container{background:#fff;width:100%}
+	.navbar{width:100%}
+
+	.cats{list-style: none; padding:0;}
+	.cats li{border-bottom:1px solid #ccc; padding:8px; list-style-type:none;}
+	
