@@ -4,4 +4,4 @@
 
 	.cats{list-style: none; padding:0;}
 	.cats li{border-bottom:1px solid #ccc; padding:8px; list-style-type:none;}
-	
+	img{max-width: 100%;}
