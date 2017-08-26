@@ -1,0 +1,22 @@
+---
+layout: default
+---	
+	<div class="repeat col-sm-9 ">
+		<!--page Date & Author-->
+		<div class="col-sm-3 hidden-xs"><br /><p>
+			<strong>{{ page.date | date: "%B %d, %Y" }}</strong>
+				<br/>Author: {{page.author}}
+			<br/><a href="#comments">Comments</a>
+		</p><hr /></div>
+		<!--page Date & Author-->
+		
+		<!--Blog pages-->
+		<div class="col-sm-9  article">
+			<h1 class="text-red">{{ page.title }}</h1>
+				{{content}}
+			<p><small>Posted in: {% for category in page.categories %}&bull;<a href="/categories/#{{ category }}">{{ category }}</a>&nbsp; {% if forloop.last != true %} {% endif %} {% endfor %} | 
+			Tagged: {% for tag in page.tags %}&bull;<a href="/tags/#{{ tag }}">{{ tag }}</a>&nbsp; {% if forloop.last != true %} {% endif %} {% endfor %}</small></p>
+			<div id="comments">{% include disqus.html %}</div>
+		</div>
+		<!--Blog pages-->
+	</div>

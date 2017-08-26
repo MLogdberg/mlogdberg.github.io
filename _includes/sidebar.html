@@ -1,0 +1,36 @@
+ <div class="col-sm-3 sidebar">
+
+					<!--Sidebar / Tags & More --> 
+		<h4 class="text-red">CATEGORIES</h4><br />
+		<ul class="cats">
+		{% for category in site.categories %}
+		{% capture category_name %}{{ category | first }}{% endcapture %}
+		<li><a href="/categories/#{{ category_name }}" class="text-black">{{ category_name }}</a></li>
+		{% endfor %}
+		</ul>
+
+		<!--Sidebar / Tags & More -->
+		
+		<!--Archives-->
+		<br /><h4 class="text-red">ARCHIVES</h4><br />
+		<ul class="cats">
+	  {% for post in site.posts %}
+	    {% unless post.next %}
+	      <li><a href="/archive/#{{ post.date | date: '%B %Y' }}" class="text-black">{{ post.date | date: '%B %Y' }}</a></li>
+	    {% else %}
+	      {% capture year %}{{ post.date | date: '%B %Y' }}{% endcapture %}
+	      {% capture nyear %}{{ post.next.date | date: '%B %Y' }}{% endcapture %}
+	      {% if year != nyear %}
+	        <li><a href="/archive/#{{ post.date | date: '%B %Y' }}" class="text-black">{{ post.date | date: '%B %Y' }}</a></li>
+	      {% endif %}
+	    {% endunless %}
+	  {% endfor %}
+	</ul>
+	
+<!--Archives-->
+
+<br /><h4 class="text-red">SUBSCRIBE TO OUR FEED</h4><br />
+<a href="/rss.xml"><img src="/assets/uploads/img/rss.png" /> Click here to subscribe to our RSS-feed →</a>
+
+
+</div>

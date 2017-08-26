@@ -1,1 +1,60 @@
-"hello world"
+---
+layout: default
+title: Mattias Lögdberg - Blog | The key to a long and happy life is to learn new stuffs.
+description: In this blog I will blog about new experiences, releases or other things happening in the Integration space.
+---
+<div class="repeat col-sm-9 ">
+{% for post in paginator.posts %}
+	
+		<!--Post Date & Author-->
+		<div class="col-sm-3 hidden-xs"><br /><p>
+		<strong>{{ post.date | date: "%B %d, %Y" }}</strong>
+		<br/>Author: {{ post.author }}
+		<br/><a href="{{ post.url }}#comments">Comments</a>
+		</p><hr /></div>
+		<!--Post Date & Author-->
+		
+		<!--Blog Posts-->
+		<div class="col-sm-9">
+			<h1><a class="post-title" href="{{ post.url }}">{{post.title}} </a></h1>
+			{{ post.content }}
+			<div class="clearfix"> </div>
+					
+<p><small>Posted in: {% for category in post.categories %}&bull;<a href="/categories/#{{ category }}">{{ category }}</a>&nbsp; {% if forloop.last != true %} {% endif %} {% endfor %} | 
+  Tagged: {% for tag in post.tags %}&bull;<a href="/tags/#{{ tag }}">{{ tag }}</a>&nbsp; {% if forloop.last != true %} {% endif %} {% endfor %}</small></p>
+
+		<!--Sidebar / Tags & More -->
+	</div>
+		<div class="clearfix"></div>
+		<hr />
+		{% endfor %}	
+	<div class="pagin text-center">
+				{% if paginator.total_pages > 1 %}
+<ul class="start pagination">
+  {% if paginator.previous_page %}
+  <li>
+    <a rel="prev" href="{{ paginator.previous_page_path | replace: 'index.html', '/' | prepend: site.baseurl | replace: '//', '/' }}">	&laquo; Prev</a>
+	</li>
+  {% else %}
+   <li> <span>&laquo; Prev</span></li>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <li class="active"><a>{{ page }}</a></li>
+    {% elsif page == 1 %}
+      <li><a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+    {% else %}
+      <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <li><a rel="next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
+  {% else %}
+    <li><span>Next &raquo;</span></li>
+  {% endif %}
+</ul>
+{% endif %}
+		</div>
+</div>

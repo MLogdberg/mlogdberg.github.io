@@ -1,0 +1,20 @@
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="/assets/css/style.css" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Droid+Sans%7CImprima%7COswald" rel="stylesheet">
+	<link rel="icon" type="image/png" href="http://www.ibiz-solutions.se/favicon.ico">
+	<link rel="alternate" type="application/rss+xml" href="http://blog.ibiz-solutions.se/rss.xml">
+	<title>{% if page.title != null %} {{ page.title }} | {{site.title}} {% else %}{{site.title}}{% endif %}</title>
+{% if page.description %}<meta name="description" content="{{page.description}}">
+{% else %} <meta name="description" content="{{ page.content | strip_html | truncatewords: 25 }}"> {% endif %}
+<meta content="{{ site.title }}" property="og:site_name">
+{% if page.title %}  <meta content="article" property="og:type">{% else %}  <meta content="website" property="og:type">{% endif %}
+{% if page.url %}  <meta content="{{site.url}}{{ page.url | remove: 'index.html'}}" property="og:url"> {% endif %}
+{% if page.image %}<meta property='og:image' content='{{page.image}}'/>{% else %}<meta property='og:image' content='{{site.url}}/assets/img/logo21.png'/>{% endif %}
+<meta property='og:title' content='{% if page.title != null %} {{ page.title }} | {{site.title}} {% else %}{{site.title}}{% endif %}'/>
+{% if page.description %}<meta name="og:description" content="{{page.description}}">
+{% else %} <meta name="og:description" content="{{ page.content | strip_html | truncatewords: 25 }}"> {% endif %}
+ 
