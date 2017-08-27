@@ -37,8 +37,8 @@ The email:
 
 [![](/assets/uploads/2017/08/OMS-non-event-alarm-email.png)](/assets/uploads/2017/08/OMS-non-event-alarm-email.png)
 
+Monitoring for events that should happen but are not happening is always tricky and has historically always been hard to solve, so often collegues or other people in your organisation creates tasks for them to do daily checks of some sort. It can be small things like checking that a folder is empty or a log for a row with todays date on it.
+Even if the task itself is easy it burdens the people doing it and as more of these "small" tasks are added the more time it consumes, time these peoople should have spent working on more important tasks.
+So to be able to handle monitoring of predicted events and get an alarm we can give services of great value to these people, now we notify them if anything is stopped or so and they can focus on their work. When they can rely on the things we build, we are not only building robust integrations we are then also building trust and a service of great value.
 
-Creating reliable flows where we can tell our end users that we will monitor this to make sure that files are sent as promised or if they are not sent we will notify you about the issue is a vital part of building a good and reliable Integration department.
-When we can garantee this and users start's to feel confortable with the solution, they can start use that time spent checking files and systems to mae sure the data is sent in doing better and more important things. 
-
-It's often the small things that makes the most in the end.
+It's often the small things that makes the most.
