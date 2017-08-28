@@ -9,7 +9,8 @@ description: In this blog I will blog about new experiences, releases or other t
 		<!--Post Date & Author-->
 		<div class="col-sm-3 hidden-xs"><br /><p>
 		<strong>{{ post.date | date: "%B %d, %Y" }}</strong>
-		<br/>Author: {{ post.author }}
+		<br/>{{ post.title }}
+		<br/>{{ post.author }}
 		<br/><a href="{{ post.url }}#comments">Comments</a>
 		</p><hr /></div>
 		<!--Post Date & Author-->
@@ -20,8 +21,8 @@ description: In this blog I will blog about new experiences, releases or other t
 			{{ post.content }}
 			<div class="clearfix"> </div>
 					
-<p><small>Posted in: {% for category in post.categories %}&bull;<a href="/categories/#{{ category }}">{{ category }}</a>&nbsp; {% if forloop.last != true %} {% endif %} {% endfor %} | 
-  Tagged: {% for tag in post.tags %}&bull;<a href="/tags/#{{ tag }}">{{ tag }}</a>&nbsp; {% if forloop.last != true %} {% endif %} {% endfor %}</small></p>
+<p><small>Posted in: {% for category in post.categories %} | <a href="/categories/#{{ category }}">{{ category }}</a>&nbsp; {% if forloop.last != true %} {% endif %} {% endfor %} | 
+  Tagged: {% for tag in post.tags %} | <a href="/tags/#{{ tag }}">{{ tag }}</a>&nbsp; {% if forloop.last != true %} {% endif %} {% endfor %}</small></p>
 
 		<!--Sidebar / Tags & More -->
 	</div>
