@@ -31,6 +31,39 @@ The new property looks like:
     }
 },
 ```
+
+The foreach now looks like: (removed the body to the function for clarity reasons)
+```
+"For_each": {
+    "actions": {
+        "INT0020-Update-Fuse-Users": {
+            "inputs": {
+                "body": {
+                   ...
+                },
+                "function": {
+                    "id": "/subscriptions/fakeee-15f5-4c85-bb3e-1e108dc79b00/resourceGroups/rgroup/providers/Microsoft.Web/sites/appname/functions/INT0020-Update-Fuse-Users-Compare"
+                }
+            },
+            "runAfter": {},
+            "type": "Function"
+        }
+    },
+    "foreach": "@body('INT0020-Split-Array')",
+    "runAfter": {
+        "GET_FUSE_TOKEN": [
+            "Succeeded"
+        ]
+    },
+    "runtimeConfiguration": {
+        "concurrency": {
+            "repetitions": 2
+        }
+    },
+    "type": "Foreach"
+},
+```
+
 And setting the *repetitions* to 2 will be the more or less the same as above solution in execution but it will be mutch easier to maintain and work with the Logic App now.
 
 Logic App in the designer will now look like:
