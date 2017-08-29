@@ -19,7 +19,7 @@ Making the flow complex and look *"uggly"*:
 [![](/assets/uploads/2017/08/Logic-App-concurrency-multiple-foreach.png)](/assets/uploads/2017/08/Logic-App-concurrency-multiple-foreach.png)
 
 
-# Newly release concurrency control!
+# Newly released concurrency control!
 But fortunately there is now a newly released object property on the for each action that will help us, only available in **CodeView** for now but that will work just fine.
 
 The new property looks like:
@@ -38,7 +38,7 @@ Logic App in the designer will now look like:
 [![](/assets/uploads/2017/08/Logic-App-concurrency-one-foreach.PNG)](/assets/uploads/2017/08/Logic-App-concurrency-one-foreach.PNG)
 
 
-# Triggers also have this
+# Triggers also have concurent control
 We can also set this on triggers, sample bellow is on a recurrent trigger (or polling trigger withou spliton) will look like;
 
 ```
