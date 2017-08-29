@@ -32,6 +32,8 @@ The new property looks like:
 },
 ```
 
+And setting the *repetitions* to 2 will be the more or less the same as above solution in execution but it will be mutch easier to maintain and work with the Logic App now.
+
 The foreach now looks like: (removed the body to the function for clarity reasons)
 ```
 "For_each": {
@@ -63,8 +65,6 @@ The foreach now looks like: (removed the body to the function for clarity reason
     "type": "Foreach"
 },
 ```
-
-And setting the *repetitions* to 2 will be the more or less the same as above solution in execution but it will be mutch easier to maintain and work with the Logic App now.
 
 Logic App in the designer will now look like:
 
