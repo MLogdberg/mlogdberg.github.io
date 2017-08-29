@@ -85,6 +85,8 @@ We can also set this on triggers, sample bellow is on a recurrent trigger (or po
 }
 ```
 
+For more detailed explanation on Trigger handling I suggest you read [this great post from Toon Vanhoutte](https://toonvanhoutte.wordpress.com/2017/08/29/logic-apps-concurrency-control/)
+
 
 I'm really happy that the product group finally has released this since it's such an important part in our *new* world of ditributed landscapes and our "new" responsibility and interest in making sure our solutions are not flooding the destionations.
 We got the power and now we got the possibility to restrain them to the appropiate amount.
