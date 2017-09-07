@@ -103,5 +103,5 @@ This is truly a nice feature that we will use alot but we also need to understan
 resending the information is not allowed, the queue lenght should be set as low as possible to prevent the retry behavior of clients resending the information even if it's not wanted.
 Or we might want to use other techniques for that kind of flows. 
 
-Anyway a great feature and wery usefull one, but as allways make sure to understand the feature and the requirements of the protected API when configuring it. 
+All in all a *great feature* and *wery usefull* one, but as allways make sure to understand the feature and the requirements of the protected API when configuring it. 
 
