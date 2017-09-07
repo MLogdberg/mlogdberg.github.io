@@ -34,14 +34,20 @@ So let's show a sample, I've created a Logic App to act as a backend service, it
 
 [![](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend.png)](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend.png)
 
+Part 1: A simple flow will be a simple Logic app to Logic App with no restrictions:
+[![](/assets/uploads/2017/09/demoFlow-logictologicapp.png)](/assets/uploads/2017/09/demoFlow-logictologicapp.png)
+
 And now let's see how this looks like when consumed by another Logic App in a foreach loop (without any concurrency restrictions).
 
 [![](/assets/uploads/2017/09/apim-concurrency-control-logic-app-nocontrol-logicapp.png)](/assets/uploads/2017/09/apim-concurrency-control-logic-app-nocontrol-logicapp.png)
 
-As assumed the execution takes abit longer than 20 seconds, almost 30:
+As assumed the execution takes abit longer than 20 seconds:
 [![](/assets/uploads/2017/09/apim-concurrency-control-logic-app-nocontrol-logicapp-run.png)](/assets/uploads/2017/09/apim-concurrency-control-logic-app-nocontrol-logicapp-run.png)
 
-In order to protect my backend (the logic app with 20 seconds delay) I've imported the logic App to my API Management instance and added the *Concurrency Control* policy:
+Part 2: Adding concurrency control by exposing the Backend Logic App via API Management 
+[![](/assets/uploads/2017/09/demoFlow-logictoapimtologicapp.png)](/assets/uploads/2017/09/demoFlow-logictoapimtologicapp.png)
+
+The Logic App is imported to API Management and the policy *Concurrency Control* is added:
 
 [![](/assets/uploads/2017/09/apim-concurrency-control-apim-api.png)](/assets/uploads/2017/09/apim-concurrency-control-apim-api.png)
 
