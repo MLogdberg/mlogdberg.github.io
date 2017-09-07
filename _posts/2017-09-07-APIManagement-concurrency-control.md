@@ -78,22 +78,22 @@ And the policy looks like:
 
 To demonstrat the functionallity a new Logic App is now used , same logic as before but using the API Management to access the backend Logic App.
 
-[![](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend.png](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend.png)
+[![](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend.png)](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend.png)
 
 
 Executing the Logic App will now take 4 minutes! since the concurrency is set to 2.
 
-[![](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend-run.png](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend-run.png)
+[![](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend-run.png)](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend-run.png)
 
 
 So that is great now we have prevented to many concurrent calls to our backend system, but is it all good? Let's look in to the log of our "backend system"
 
 
-[![](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend-cotrolled-runs.png](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend-cotrolled-runs.png)
+[![](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend-cotrolled-runs.png)](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend-cotrolled-runs.png)
 
 We can see that there are 2 failed runs and 22 in total runs, but as you remember the list had 20 records so we only wanted 20 request to our "backend system".
 
-[![](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend-cotrolled-failed-run.png](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend-cotrolled-failed-run.png)
+[![](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend-cotrolled-failed-run.png)](/assets/uploads/2017/09/apim-concurrency-control-logic-app-backend-cotrolled-failed-run.png)
 
 The failed ones has failed due to timeout and that will also make the Logic App executing a retry, ending with a total of 22 calls to the backend.
 
