@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Logic Apps concurrency control
+title: API Management concurrency control
 author: Mattias Lögdberg
 tags: [API Management, Integration]
 categories: [API Management]
