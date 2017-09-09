@@ -25,10 +25,10 @@ It's import to understand the Environment reference and boundries, we don't want
 
 When doing a deployment we want as little manual work as possible and above we have 2 issues, manual configuration equals downtime and sample messagas is one of the best things when onboarding new API consumers we can't ignore this.  
 
-Let's look at an example, this is how an operation is looking:
+Let's look at an example, this is how an operation is looking (note the sample):
 [![](/assets/uploads/2017/09/apim-arm-template-creator-currency-convererter-operation-gui.png)](/assets/uploads/2017/09/apim-arm-template-creator-currency-convererter-operation-gui.png)
 
-And when this api is exported via the **Automation Script** it's not there:
+And when this api is exported via the **Automation Script** the sample is not part of the object returned:
 
 ```
  {
