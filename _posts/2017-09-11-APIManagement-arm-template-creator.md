@@ -17,8 +17,14 @@ First you can download the entire API Management instance ARM specification dire
 [![](/assets/uploads/2017/09/apim-arm-template-creator-automation-script.png)](/assets/uploads/2017/09/apim-arm-template-creator-automation-script.png)
 
 But when starting to look into this I got a little dissapointed, it's to mutch hardcoded values like backend URL's parameters and there is for me unwanted things aswell as Users, Groups, Subscriptions etc. All that could be sorted out and scripted (alot of work but could be done) but the real deal breaker using the automation script was the missing request/response representation and the missing *queryParameters* wich lead to crahsing imports.
-And since we want as little manual work as possible and sample messagas is one of the best things when onboarding new API consumers we can't ignore this.  
-This is how an operation is looking:
+It's import to understand the Environment reference and boundries, we donät want cross reference communcation that is not intended:
+[![](/assets/uploads/2017/09/apim-arm-template-creator-environments.png)](/assets/uploads/2017/09/apim-arm-template-creator-environments.png)
+
+
+
+When doing a deployment we want as little manual work as possible and above we have 2 issues, manual configuration equals downtime and sample messagas is one of the best things when onboarding new API consumers we can't ignore this.  
+
+Let's look at an example, this is how an operation is looking:
 [![](/assets/uploads/2017/09/apim-arm-template-creator-currency-convererter-operation-gui.png)](/assets/uploads/2017/09/apim-arm-template-creator-currency-convererter-operation-gui.png)
 
 But when exported via the **Automation Script** it's not there:
@@ -93,9 +99,6 @@ To be compared with the representation recieved when using the REST api:
 ```
 
 We can clearly see that the REST object contains far more inforamtion and since we are working withe environment setups with DEV/TEST/PROD it would be dissapointing to not be able to provide samples in DEV but not in TEST and PRODUCTION (where it makes most sense):
-
-Environment reference:
-[![](/assets/uploads/2017/09/apim-arm-template-creator-environments.png)](/assets/uploads/2017/09/apim-arm-template-creator-environments.png)
 
  
 So this was the start of my new project **API Management Template Extractor**
