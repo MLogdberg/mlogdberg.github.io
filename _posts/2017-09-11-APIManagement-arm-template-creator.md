@@ -93,6 +93,8 @@ To be compared with the representation recieved when using the REST api:
 ```
 
 We can clearly see that the REST object contains far more inforamtion and since we are working withe environment setups with DEV/TEST/PROD it would be dissapointing to not be able to provide samples in DEV but not in TEST and PRODUCTION (where it makes most sense):
+
+Environment reference:
 [![](/assets/uploads/2017/09/apim-arm-template-creator-environments.png)](/assets/uploads/2017/09/apim-arm-template-creator-environments.png)
 
  
@@ -279,7 +281,7 @@ Get-APIManagementTemplate -APIFilters $filter -APIManagement $apimanagementname 
 ```
 
 ### Upcoming
-So is this all done? No there are more work to come and here are some todos:
+So is this all done? No there are more work to come and here are some of my Todo's in this project:
 
 * Automated support for all Azure Resources.
 * Operations Schema support.
