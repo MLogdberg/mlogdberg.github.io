@@ -104,6 +104,7 @@ We can clearly see that the REST object contains far more inforamtion and since 
  
 So this was the start of my new project **API Management Template Extractor**
 
+As some of you know I've been contributing alot to the Logic App Tempalte Connector: [https://github.com/jeffhollan/LogicAppTemplateCreator](https://github.com/jeffhollan/LogicAppTemplateCreator) so I thought I'll do something similar for API Management.
 
 While starting this I added a few more requirements
 1. Possible to only extract one specific api, but get all required linked attributes such as Named Values.
@@ -254,7 +255,8 @@ In my sample API Manegement instance my SOAP Currency Converter API is generated
 ```
 
 ### Get Started
-So how do you get started? First of download the repo, compile it and use this PowerShell script (replace the values with appropiate ones from your subscription and API Management instance).
+So how do you get started? First of download the repo [https://github.com/MLogdberg/APIManagementARMTemplateCreator](https://github.com/MLogdberg/APIManagementARMTemplateCreator), compile it and use this PowerShell script (replace the values with appropiate ones from your subscription and API Management instance).
+
 ``` PowerShell
 #if you have problem with execution policy execute this in a administrator runned powershell window.
 #Set-ExecutionPolicy -ExecutionPolicy Unrestricted
@@ -285,7 +287,7 @@ Get-APIManagementTemplate -APIFilters $filter -APIManagement $apimanagementname 
 ```
 
 ### Upcoming
-So is this all done? No there are more work to come and here are some of my Todo's in this project:
+More functions and better support for authentication is on the todo list, also smarter/simpler product handling, here are my bullet points:
 
 * Automated support for all Azure Resources.
 * Operations Schema support.
