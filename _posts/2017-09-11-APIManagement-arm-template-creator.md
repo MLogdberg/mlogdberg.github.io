@@ -102,9 +102,9 @@ To be compared with the representation recieved when extracting the API using th
 We can clearly see that the REST object contains far more inforamtion and since we are working withe environment setups with DEV/TEST/PROD it would be dissapointing to not be able to provide samples in DEV but not in TEST and PRODUCTION (where it makes most sense):
 
  
-So this was the start of my new project **API Management Template Extractor**
+So this was the start of my new project **API Management ARM Template Creator**
 
-As some of you know I've been contributing alot to the Logic App Tempalte Connector: [https://github.com/jeffhollan/LogicAppTemplateCreator](https://github.com/jeffhollan/LogicAppTemplateCreator) so I thought I'll do something similar for API Management.
+As some of you know I've been contributing alot to the Logic App Template Creator: [https://github.com/jeffhollan/LogicAppTemplateCreator](https://github.com/jeffhollan/LogicAppTemplateCreator) so I thought I'll do something similar for API Management.
 
 While starting this I added a few more requirements
 1. Possible to only extract one specific api, but get all required linked attributes such as Named Values.
@@ -113,7 +113,7 @@ While starting this I added a few more requirements
 1. Automated url/Named values handling for Logic Apps
 1. Parameterized values on all changeable values that is needed for groups, products, authorization servers etc
 
-The first release is made today and the project can be found at my GIT site: {URL}
+The first release is made today and the project can be found at my GIT site: [https://github.com/MLogdberg/APIManagementARMTemplateCreator](https://github.com/MLogdberg/APIManagementARMTemplateCreator)
 
 How does it work?
 
@@ -261,7 +261,7 @@ So how do you get started? First of download the repo [https://github.com/MLogdb
 #if you have problem with execution policy execute this in a administrator runned powershell window.
 #Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
-Import-Module "C:\temp\APIManagement\APIManagementTemplate\bin\Debug\APIManagementTemplate.dll"
+Import-Module "C:\temp\APIManagementARMTemplateCreator\APIManagementTemplate\bin\Debug\APIManagementTemplate.dll"
 
 
 #Set the name of the API Mangement instance
