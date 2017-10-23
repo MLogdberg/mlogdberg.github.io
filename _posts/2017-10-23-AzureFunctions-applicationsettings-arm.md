@@ -214,7 +214,7 @@ Creating a good ARM template will make it easier to move between environments an
 
 **But remember** to make sure that changes that are made directly to the *Function App* Application Settings are reflected to the parameter files and arm templates aswell to prevent changes to be overwriten.
 
-Sample getting the URL of a Loci App (added parameters for *Resource Group* and *Logic App* name and trigger. (in the arm template file
+Sample getting the URL of a Locic App (assumes added parameters for *Resource Group* and *Logic App* name and the trigger name). (template file)
 ```
     {
       "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
