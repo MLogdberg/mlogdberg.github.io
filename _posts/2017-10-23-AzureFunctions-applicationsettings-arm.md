@@ -15,13 +15,13 @@ So we need to manage them to make sure that they have the correct values.
 [![](/assets/uploads/2017/10/azure_functions_application_settings.png)](/assets/uploads/2017/10/azure_functions_application_settings.png)
 
 
-These can be managed manually since they are rarely changed but it requires dicipline and good release documentation and sometimes quite advanced procedures to get the information, some of these cases are i.e. getting the *URL* of a *Logic App*, a value from *Key Vault* or we might just want the **quality** and **reliability** of well orchestrated deployments.
+These can be managed manually since they are rarely changed but it requires dicipline and good release documentation and sometimes quite advanced procedures to get the information, some of these cases are i.e. getting the *URL* of a *Logic App*, a value from *Key Vault* or we might just walue **quality** and **reliable** deployments.
 
-As the last part mentions I prefer to manage these settings via ARM templates since it gives me the possiblity to get values from Key Vault or automate the process to get the URl and at the same time gives me control and robustness on what settings are set and so on.
-Just make sure that operations persons are aware what settings are been set from ARM template deployment since if they do changes directly in the Azure functions Application Settings tab they will be overwriten at the next deployment.
+I prefer to manage these settings via ARM templates since it gives me the possiblity to get values from Key Vault or automate the process to get values from other Azure resources and at the same time gives me control and robustness so I know that the settings are set and that the values are correct.
+A note to this, make sure that operations persons are aware that settings are been set from ARM template deployment since if they do changes directly in the Azure functions Application Settings tab they will be overwriten at the next deployment and that might cause problems.
 
 
-Let's look in to the ARM template, I have just copied this from the Azure Portal (automation option when creating a new Azure Function).
+Let's look in to the ARM template, I've just copied this from the Azure Portal (automation option when creating a new Azure Function).
 ```
 {
   "parameters": {
@@ -113,7 +113,7 @@ Let's look in to the ARM template, I have just copied this from the Azure Portal
 
 The interesting section is the **appSettings** under the **siteConfig** shown bellow.
 
-It show the standard properties that is used when deploying a Azure Function and here we can add new Application Settings.
+Here is the standard properties that are used when deploying a Azure Function and here we can add new Application Settings. (note that ARM functions are used to get keys to the storage account)
 ```
 "properties": {
         "siteConfig": {
@@ -199,13 +199,14 @@ And now we can use this with a parameter file, I copied the paramter file the sa
 }
 ```
 
-After Deploying this we can go in and see the new setting in the Application Setting on the Azure Function App and start using it.
+After doing a Resource Group Deployment, we can go in and see the new setting in the Application Setting on the Azure Function App and start using it.
 
 [![](/assets/uploads/2017/10/azure_functions_application_settings_customkey_value.png)](/assets/uploads/2017/10/azure_functions_application_settings_customkey_value.png)
 
 
 **Summary:**
-I like this approach since we can make sure that parameters are set and use other functions to make our deployments easier, making deployment out of box integrated with *Azure Key Vaults* to make it easier to manage secrets (note that secrets are in plain text in application settings for the users who has access), and the other tasks that speed up/add reliability to our deployemnt as getting the URL of a Logic App, wich is a complex/time consuming task and that will also add the garantee that the Logic App is deployed.
+
+I like this approach since we can make sure that parameters are set and prepare before deployment without needing to change values in the Function App, I also love the ARM functions that we can use during deployments to automate processes or just get values from *Azure Key Vaults* to make it easier to manage secrets (note that secrets are in plain text in application settings for the users who has access), and the other tasks that speed up/add reliability to our deployemnt as getting the URL of a Logic App, wich is a complex/time consuming task and that will also add the garantee that the Logic App is deployed.
 But rember that we need to make sure that changes that are made directly to the *Function App* Application Settings are reflected to the deployment step aswell to prevent changes to be overwriten.
 
 Sample getting the URL of a Loci App (added parameters for *Resource Group* and *Logic App* name and trigger. (in the arm template file
