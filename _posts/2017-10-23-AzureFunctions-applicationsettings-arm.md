@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Azure Functions Manage Application Settings via ARM
+title: Azure Functions - Manage Application Settings via ARM
 author: Mattias Lögdberg
 tags: [Azure Functions, Integration]
 categories: [Azure Functions]
