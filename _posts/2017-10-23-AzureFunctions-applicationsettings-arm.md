@@ -209,7 +209,7 @@ After doing a Resource Group Deployment, we can go in and see the new setting in
 I like this approach since we can make sure that parameters are set and prepare before deployment without needing to change values in the Function App, I also love the ARM functions that we can use during deployments to automate processes or just get values from *Azure Key Vaults* to make it easier to manage secrets (note that secrets are in plain text in application settings for the users who has access).
 The ARM functions can really speed up and automate the deployment processes even further, here we can as shown aboive get keys to storage account or get the URL of a Logic App during deployment time, wich is a complex/time consuming task and when using ARM functions there is also a garantee that the Logic App is deployed and ready to be used.
 
-**But** rember that we need to make sure that changes that are made directly to the *Function App* Application Settings are reflected to the parameter files and arm templates aswell to prevent changes to be overwriten.
+**But remember** to make sure that changes that are made directly to the *Function App* Application Settings are reflected to the parameter files and arm templates aswell to prevent changes to be overwriten.
 
 Sample getting the URL of a Loci App (added parameters for *Resource Group* and *Logic App* name and trigger. (in the arm template file
 ```
