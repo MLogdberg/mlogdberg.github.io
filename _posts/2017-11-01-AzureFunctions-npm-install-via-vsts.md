@@ -80,7 +80,7 @@ $command = '{"command": "npm install ' + $npmpackage + '","dir": "site\\wwwroot"
 Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $base64AuthInfo)} -UserAgent $userAgent -Method POST -Body $command -ContentType "application/json"
 ```
 
-Now all we have left is to execute this script in a Azure Powershell Task that with a Service Endpoint connection with the appropiate Role set will install the npm pacakge during the release, image bellow shows the Release setup.
+Now all we have left is to execute this script in a Azure Powershell Task that will install the npm pacakge during the release, image bellow shows the Release setup.
 
 [![](/assets/uploads/2017/11/functions-vsts-release-run-script-png)](/assets/uploads/2017/11/functions-vsts-release-run-script-png)
 
@@ -89,5 +89,5 @@ Now all we have left is to execute this script in a Azure Powershell Task that w
 
 **Summary:**
 
-I like to automate these tasks since it will give me a "easier" Release and a more reliable Release, but as for now it's hard to verify that the package is installed and if it's installed previously so a verification step that the function is loaded correctly is something we are doing.
+I like to automate these tasks since it will give me a "easier" Release and a more reliable Release, but as for now it's hard to verify that the package is installed and if it's installed previously so a verification step that the function is loaded correctly is something that might be needed.
 
