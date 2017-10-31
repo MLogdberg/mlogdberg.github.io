@@ -9,16 +9,16 @@ description:
 permalink: /azurefunctions/vsts-npm-install
 ---
 
-When setting upp build and release cyckles for diffrent Azure resources we bump in to diffrent challenges, this post will cover the need of npm install node modules in to you Function App when doing deployments.
+When setting upp build and release cyckles for diffrent Azure resources we bump in to diffrent challenges, this post will cover the challenge of npm install of node modules in to a Function App when doing deployments.
 
 
-When we are working with our development enviornment it's okay to go in and run kudo commands and so on to make sure our Function App has the correct packages installed, but as atleast I'm more and more automating these things with **Release** pipelines in **VSTS** there is a need to auotomate this process.
-It's not that it's hard to go in to *Kudo* and run the command but it's a manual step and takes time when doing a release, I prefer to have everything prepped and then press the button for install.
+When we are working with our development enviornment it's okay to go in and run kudo commands and so on to make sure our Function App has the correct packages installed, but as we are adding speed and agility to our processes our **Release** pipelines in **VSTS** has to automate more of these processes.
+It's not that it's hard to go in to *Kudo* and run the command but it's a manual step that takes time and knowledge when doing a release, I prefer to have everything prepped so that I know things are working when the Release is installed.
 
 
-So let's look in to how we can run *Kudo* commands from VSTS, since *Kudo* has a REST API we can use it for these kind of tasks, read more on it here [https://github.com/projectkudu/kudu/wiki/REST-API](Kudo Rest API)
+So let's look in to how we can run *Kudo* commands from VSTS, since *Kudo* has a REST API we can use it for these kind of tasks, read more on it here [Kudo Rest API](https://github.com/projectkudu/kudu/wiki/REST-API)
 
-Examine the API shows that it has a function for executing commands: 
+When looking in to the API documentation we easily find a function for executing commands: 
 ```
 POST /api/command
 {
@@ -27,7 +27,7 @@ POST /api/command
 }
 ```
 
-This means that we could create a message that looked like this for a npm install of request:
+This means that we could create a message that looked like this for a npm install of the *request* package:
 ```
 {
     "command": "npm install request",
@@ -37,7 +37,7 @@ This means that we could create a message that looked like this for a npm instal
 
 So let's start figuring out the rest, how to execute this from VSTS?
 
-As good as it's get this can be executed via PowerShell explained at the bottom of the API reference (changed to the commands we need to execute):
+As good as it's get this can be executed via PowerShell explained and sampled at the bottom of the API reference (I changed the sample in the following code snippet to execute the command for npm install):
 ```
 $username = "`$website"
 $password = "pwd"
@@ -51,7 +51,7 @@ $command = '{"command": "npm install ' + $npmpackage + '","dir": "site\\wwwroot"
 Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $base64AuthInfo)} -UserAgent $userAgent -Method POST -Body $command -ContentType "application/json"
 ```
 
-The credentials is now needed and that is somewhat messy, but since it's the same as the deployment credentials we can add a few commands to get that information via *Azure-RM* commands:
+The credentials is now needed and that is somewhat messy, but since it's the same as the deployment credentials we can add a commands to get that information via *AzureRmResourceAction* command:
 ```
 $creds = Invoke-AzureRmResourceAction -ResourceGroupName $resourceGroup -ResourceType Microsoft.Web/sites/config `
             -ResourceName $functionAppName/publishingcredentials -Action list -ApiVersion 2015-08-01 -Force
