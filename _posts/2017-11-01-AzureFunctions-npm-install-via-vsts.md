@@ -57,10 +57,10 @@ $creds = Invoke-AzureRmResourceAction -ResourceGroupName $resourceGroup -Resourc
             -ResourceName $functionAppName/publishingcredentials -Action list -ApiVersion 2015-08-01 -Force
 ```
 
-So with this information we can now build a more generic script that will only need three (3) parameters to run this type of commands:
-**functionAppName**: the name of the Function App
-**resourceGroupName**: the name of the resource group that contains the Function App
-**npmpackage**: the npm package to install
+So with this information we can now build a more generic script that will only need three (3) parameters to execute a npm install command on our Function App:
+* **functionAppName**: the name of the Function App
+* **resourceGroupName**: the name of the resource group that contains the Function App
+* **npmpackage**: the npm package to install
 ```
 param([string] $functionAppName, [string] $resourceGroup, [string] $npmpackage)
 
