@@ -87,9 +87,6 @@ Now all we have left is to execute this script in a Azure Powershell Task that w
 
 [![](/assets/uploads/2017/11/functions-vsts-release-run-script-png)](/assets/uploads/2017/11/functions-vsts-release-run-script-png)
 
-
-
-
 **Summary:**
 
 I like to automate these tasks since it will give me a "easier" Release and a more reliable Release, but as for now it's hard to verify that the package is installed and if it's installed previously so a verification step that the function is loaded correctly is something that might be needed.
