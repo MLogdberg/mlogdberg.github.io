@@ -86,8 +86,36 @@ Now all we have left is to execute this script in a Azure Powershell Task that w
 
 
 
+If you are using **package.json** files we can make sure all packages are installed via *npm install* command, let's see how the following could look like with a **package.json** file:
+
+![package.json file in project](/assets/uploads/2017/11/functions-package.josn-sample.png)
+
+Modifying the PowerShell script will then give us the following:
+* **functionAppName**: the name of the Function App
+* **resourceGroupName**: the name of the resource group that contains the Function App
+* **functionfolder**: the name of the folder that the function is in (same name as the function)
+```
+param([string] $functionAppName, [string] $resourceGroup, [string] $functionfolder)
+
+$creds = Invoke-AzureRmResourceAction -ResourceGroupName $resourceGroup -ResourceType Microsoft.Web/sites/config `
+            -ResourceName $functionAppName/publishingcredentials -Action list -ApiVersion 2015-08-01 -Force
+
+$username = $creds.Properties.PublishingUserName
+$password = $creds.Properties.PublishingPassword
+
+$base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username,$password)))
+
+$userAgent = "powershell/1.0"
+$apiUrl = "https://$functionAppName.scm.azurewebsites.net/api/command"
+$command = '{"command": "npm install","dir": "site\\wwwroot\\'+ $functionfolder +'"}'
+
+Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $base64AuthInfo)} -UserAgent $userAgent -Method POST -Body $command -ContentType "application/json"
+
+```
+
+
 
 **Summary:**
 
 I like to automate these tasks since it will give me a "easier" Release and a more reliable Release, but as for now it's hard to verify that the package is installed and if it's installed previously so a verification step that the function is loaded correctly is something that might be needed.
-
+Recomended is to use the **package.json** approach but it also gives some delays when running the *npm install* command since it will install alot of packages the first time.
