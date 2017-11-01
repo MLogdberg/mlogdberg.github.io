@@ -61,7 +61,9 @@ So with this information we can now build a more generic script that will only n
 * **functionAppName**: the name of the Function App
 * **resourceGroupName**: the name of the resource group that contains the Function App
 * **npmpackage**: the npm package to install
+
 ```
+
 param([string] $functionAppName, [string] $resourceGroup, [string] $npmpackage)
 
 $creds = Invoke-AzureRmResourceAction -ResourceGroupName $resourceGroup -ResourceType Microsoft.Web/sites/config `
@@ -78,12 +80,12 @@ $apiUrl = "https://$functionAppName.scm.azurewebsites.net/api/command"
 $command = '{"command": "npm install ' + $npmpackage + '","dir": "site\\wwwroot"}'
 
 Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $base64AuthInfo)} -UserAgent $userAgent -Method POST -Body $command -ContentType "application/json"
+
 ```
 
-Now all we have left is to execute this script in a Azure Powershell Task that will install the npm pacakge during the release, image bellow shows the Release setup.
+Now all we have left is to execute this script in a Azure Powershell Task that will install the npm pacakge during the release, image bellow shows the Release setup and as you can see the parameters are added in the **"Script Arguments"** input area. I've also added the zcript to a shared repo andlinked the build setup to be able to share the script and manage it in one place.
 
-![VSTS release setup](/assets/uploads/2017/11/functions-vsts-release-run-script-png)
-
+![VSTS Release Setup](/assets/uploads/2017/11/functions-vsts-release-run-script-png.PNG)
 
 
 If you are using **package.json** files we can make sure all packages are installed via *npm install* command, let's see how the following could look like with a **package.json** file:
@@ -112,8 +114,6 @@ $command = '{"command": "npm install","dir": "site\\wwwroot\\'+ $functionfolder 
 Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $base64AuthInfo)} -UserAgent $userAgent -Method POST -Body $command -ContentType "application/json"
 
 ```
-
-
 
 **Summary:**
 
