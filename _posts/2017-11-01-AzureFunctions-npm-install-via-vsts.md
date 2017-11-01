@@ -119,4 +119,5 @@ Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $base64A
 **Summary:**
 
 I like to automate these tasks since it will give me a "easier" Release and a more reliable Release, but as for now it's hard to verify that the package is installed and if it's installed previously so a verification step that the function is loaded correctly is something that might be needed.
-Recomended is to use the **package.json** approach but it also gives some delays when running the *npm install* command since it will install alot of packages the first time.
+
+Recomended is to use the **package.json** approach since it shows the dependencies and allow to easyily add new packages, but jeep in mind that it also gives some delays when running the *npm install* command since it will install alot of packages the first time.
