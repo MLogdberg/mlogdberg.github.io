@@ -83,7 +83,7 @@ Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $base64A
 
 ```
 
-Now all we have left is to execute this script in a Azure Powershell Task that will install the npm pacakge during the release, image bellow shows the Release setup.
+Now all we have left is to execute this script in a Azure Powershell Task that will install the npm pacakge during the release, image bellow shows the Release setup and as you can see the parameters are added in the "Script Arguments" input area. I've also added the zcript to a shared repo andlinked the build setup to be able to share the script and manage it in one place.
 
 ![VSTS Release Setup](/assets/uploads/2017/11/functions-vsts-release-run-script-png.PNG)
 
