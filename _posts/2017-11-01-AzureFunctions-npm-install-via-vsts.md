@@ -9,14 +9,14 @@ description:
 permalink: /azurefunctions/vsts-npm-install
 ---
 
-When setting upp build and release cyckles for diffrent Azure resources we bump in to diffrent challenges, this post will cover the challenge of npm install of node modules in to a Function App when doing deployments.
+When setting upp build and release cycles for diffrent Azure resources we bump in to diffrent challenges, this post will cover the challenge of npm install of node modules in to a Function App when doing deployments.
 
 
 When we are working with our development enviornment it's okay to go in and run kudo commands and so on to make sure our Function App has the correct packages installed, but as we are adding speed and agility to our processes our **Release** pipelines in **VSTS** has to automate more of these processes.
 It's not that it's hard to go in to *Kudo* and run the command but it's a manual step that takes time and knowledge when doing a release, I prefer to have everything prepped so that I know things are working when the Release is installed.
 
 
-So let's look in to how we can run *Kudo* commands from VSTS, since *Kudo* has a REST API we can use it for these kind of tasks, read more on it here [Kudo Rest API](https://github.com/projectkudu/kudu/wiki/REST-API)
+So let's look in to how we can run *Kudu* commands from VSTS, since *Kudu* has a REST API we can use it for these kind of tasks, read more on it here [Kudu Rest API](https://github.com/projectkudu/kudu/wiki/REST-API)
 
 When looking in to the API documentation we easily find a function for executing commands: 
 ```
