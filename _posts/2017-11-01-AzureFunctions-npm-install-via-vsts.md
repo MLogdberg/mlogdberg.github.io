@@ -82,7 +82,7 @@ Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $base64A
 
 Now all we have left is to execute this script in a Azure Powershell Task that will install the npm pacakge during the release, image bellow shows the Release setup.
 
-![VSTS release setup](/assets/uploads/2017/11/functions-vsts-release-run-script-png)
+[![](/assets/uploads/2017/11/functions-vsts-release-run-script-png)](/assets/uploads/2017/11/functions-vsts-release-run-script-png)
 
 
 
