@@ -61,7 +61,9 @@ So with this information we can now build a more generic script that will only n
 * **functionAppName**: the name of the Function App
 * **resourceGroupName**: the name of the resource group that contains the Function App
 * **npmpackage**: the npm package to install
+
 ```
+
 param([string] $functionAppName, [string] $resourceGroup, [string] $npmpackage)
 
 $creds = Invoke-AzureRmResourceAction -ResourceGroupName $resourceGroup -ResourceType Microsoft.Web/sites/config `
@@ -78,6 +80,7 @@ $apiUrl = "https://$functionAppName.scm.azurewebsites.net/api/command"
 $command = '{"command": "npm install ' + $npmpackage + '","dir": "site\\wwwroot"}'
 
 Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $base64AuthInfo)} -UserAgent $userAgent -Method POST -Body $command -ContentType "application/json"
+
 ```
 
 Now all we have left is to execute this script in a Azure Powershell Task that will install the npm pacakge during the release, image bellow shows the Release setup.
