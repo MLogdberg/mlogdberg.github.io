@@ -96,6 +96,7 @@ Modifying the PowerShell script will then give us the following:
 * **functionAppName**: the name of the Function App
 * **resourceGroupName**: the name of the resource group that contains the Function App
 * **functionfolder**: the name of the folder that the function is in (same name as the function)
+
 ```
 param([string] $functionAppName, [string] $resourceGroup, [string] $functionfolder)
 
