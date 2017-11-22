@@ -9,11 +9,12 @@ description:
 permalink: /azurefunctions/get-azure-key-vault-secret
 ---
 
-When working with usernames. password or api keys these need's to be stored in a secure and manageble way. Usually I find that these are added to Application Settings and manually handled in several places.
+When working with usernames. password or api keys these need's to be stored in a secure and manageble way. Usually I find that these are added to Application Settings and manually handled in several places, this is **not** a desired way of working so this need's to be fixed.
 
-First step is to centralise the Values and there I find Azure Key Vault a superb place, this way username/passwords are accessible during ARM deployments, from code during runtime and therefore easy to reuse and manage.
+First step is to centralise the Values and there I find that **Azure Key Vault** is a superb place, this way username/passwords/api keys etc are accessible during ARM deployments, from code during runtime and therefore easy to reuse and manage.
 
-So let's add a secret to our keyvault, after the value is added the name will be used to retrieve the value. This way we don't need to know the value just what name the secret has.
+How do we do this? I've described in earlier post how to use Key Vault with ARM templates so now I'll try to explain how to use Key Vault from code, in this case a Azure Function. (I've assumed that a Key Vault instance is created)
+Let's get started and add a secret to our keyvault, after the value is added the name will be used to retrieve the value. This way we don't need to know the value just what name the secret has.
 
 ![Add Secret to KeyVault](/assets/uploads/2017/11/functions-key-vault-add-secret.png)
 
@@ -34,6 +35,10 @@ Press the "Add new", select the principal (AAD Application) in my case the *KeyV
 
 
 In a Azure Function we can add the following code (complete function):
+Following nuget packages are needed:
+*Microsoft.Azure.KeyVault;
+*Microsoft.IdentityModel.Clients.ActiveDirectory
+
 ```
 public static class KeyVaultFunction
 {
