@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Azure Functions Get Key Vault Secret
+title: Manage secrets in Azure Key Vault Secret
 author: Mattias Lögdberg
 tags: [Azure Functions, Integration,Security]
 categories: [Azure Functions]
@@ -93,7 +93,7 @@ Now to start coding we need some nuget packages:
 *Microsoft.Azure.KeyVault;
 *Microsoft.IdentityModel.Clients.ActiveDirectory
 
-And a bit of code, sample bellow, for more [indept about how to nuse in functions read more at Jeff Holan's blog post:](https://medium.com/@jeffhollan/getting-key-vault-secrets-in-azure-functions-37620fd20a0b) 
+And a bit of code, sample bellow, for more indept about how to use in functions read more at [Jeff Holan's blog post:](https://medium.com/@jeffhollan/getting-key-vault-secrets-in-azure-functions-37620fd20a0b) 
 
 Code to retrieve a secret value and return in a HTTP response
 ```
