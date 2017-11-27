@@ -2,8 +2,8 @@
 layout: post
 title: Centralize secrets in Azure Key Vault
 author: Mattias Lögdberg
-tags: [Azure Functions, Integration,Security]
-categories: [Azure Functions]
+tags: [Key Vault, Integration,Security]
+categories: [Key Vault]
 image: 
 description: 
 permalink: /keyvault/centralize-secrets
