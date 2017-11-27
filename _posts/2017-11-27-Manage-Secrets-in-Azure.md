@@ -173,8 +173,10 @@ After this setup is completed we now are collecting the secrets from Key Vault d
 
 **Summary:**
 
-I really like to remove username and passowrds from code and settings since it's always a mess manage and handling them, also there are a few security aspects in it aswell.
-Making it possible to get username/password or other secrets from KeyVault inside your Function, Web App and at the same time use them when deploying ARM templates like with Logic Apps API Connections or API Management is a great addon, since we now only need to manage these at one place. 
+I really like to remove username and passwords from code and settings since it's always a mess to manage and in handling them, also there are a few security aspects to consider as well. 
+Making it possible to get username/password or other secrets from *Key Vault* inside your Function, Web App and at the same time use them when deploying ARM templates like with Logic Apps API Connections or API Management is really the true win, since we now only need to manage these in one place and can use them wherever needed. 
+
+In the end we are creating a solution as the image bellow and this gives us a centralized place for our secrets and we only spreading them if we really need to like to an *API Connection* and that is done integrated with ARM.
 
 ![Secrets centralised in KeyVault](/assets/uploads/2017/11/password-username-keys-with-keyvault.png)
 
