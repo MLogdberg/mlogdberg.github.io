@@ -11,11 +11,11 @@ permalink: /logicapps/custom-connector-via-onpremgateway
 
 In an ever growing hybrid world the need of exposing services that are hosted On Premise are growing and so are the limitations and requirments aswell, the newest way of exposing HTTP based services in Logic Apps is via the **Logic App Custom Connector** via the **On Premise Data Gateway** 
 
-So our task looks as the following overview image:
+So previusly when having the task of calling on-premise firewall protected services from our Logic App's it wasent possible without firewall openings or other resources to help connecting.
 
 ![Task Overview](/assets/uploads/2017/12/logica-app-to-custom-webservice.png)
 
-Let's solve it with the newly updated **On Premise Data Gateway** and a  **Logic App Custom Connector**.
+But now it's possible and let's solve it with the newly updated **On Premise Data Gateway** and a  **Logic App Custom Connector**.
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ Press the **Edit** button.
 ![Press the edit button](/assets/uploads/2017/12/azure-portal-custom-connector-deployed-edit.png)
 
 Upload the swagger file:
-![Upload swagger file](/assets/uploads/2017/12/azure-portal-custom-connector-deployed-upload.PNG)
+![Upload swagger file](/assets/uploads/2017/12/azure-portal-custom-connector-deployed-upload.png)
 
 Now the API Connection is generated based on the swagger file, scroll down and make changes as you see them neeed **but** dont' fotgett to check the *"Connect via on-premises data gateway"* checkbox and if needed change the URL's to match the URL's to the server exposing the service (I'll just keep em same since it's on the same machine for me)
 
