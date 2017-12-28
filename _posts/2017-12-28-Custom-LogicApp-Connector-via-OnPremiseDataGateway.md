@@ -51,7 +51,7 @@ Upload the swagger file:
 
 Now the API Connection is generated based on the swagger file, scroll down and make changes as you see them neeed **but** dont' fotgett to check the *"Connect via on-premises data gateway"* checkbox and if needed change the URL's to match the URL's to the server exposing the service (I'll just keep em same since it's on the same machine for me)
 
-![Check the checkbox for on-premise data gateway](/assets/uploads/2017/12/azure-portal-custom-connector-deployed-check-onpremgateway.PNG)
+![Check the checkbox for on-premise data gateway](/assets/uploads/2017/12/azure-portal-custom-connector-deployed-check-onpremgateway.png)
 
 Now press Continue and move on with the process, once you are finished make sure to update the *Logic Apps Custom Connector* by pressing the check mark at the top:
 
