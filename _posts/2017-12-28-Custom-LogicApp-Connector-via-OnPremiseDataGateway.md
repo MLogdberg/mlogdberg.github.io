@@ -3,7 +3,7 @@ layout: post
 title: Logic App Custom Connector via On Prem Gateway
 author: Mattias Lögdberg
 tags: [Logic Apps, Integration,Hybrid]
-categories: [Logic Apps]
+categories: [LogicApps]
 image: 
 description: 
 permalink: /logicapps/custom-connector-via-onpremgateway
