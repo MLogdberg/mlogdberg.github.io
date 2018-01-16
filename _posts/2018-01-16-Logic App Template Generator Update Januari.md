@@ -15,7 +15,7 @@ Also there where some issues regarding names that could not contain . (dot) and 
 
 The last part added was an option to be able to save the incoming body of the requested resources, this was done to be able to easier to debugg when developing, thanks to this and a Mock resource collector class  that can replay the saved files we  now can create full test runs that are replaying the whole collection of resources.
 
-The github repository is found [here](https://github.com/jeffhollan/LogicAppTemplateCreator)
+The github repository is found here: [https://github.com/jeffhollan/LogicAppTemplateCreator](https://github.com/jeffhollan/LogicAppTemplateCreator)
 
 ## Updates
 * Now supporting extraction of Logic Apps containg Custom Connectors and generating working importable Connection resources with the Logic App.
