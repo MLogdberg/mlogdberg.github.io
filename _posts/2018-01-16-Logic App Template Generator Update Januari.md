@@ -9,8 +9,6 @@ description:
 permalink: /logicapps/template-extractur-update-januari
 ---
 
-# Januari Updates on the Logic App Template Creator
-
 A new year comes with new updates, as you might now there is now a Custom Connector option for Logic  Apps and earlier this had some changes in the reource id handling in comparision with the managed api's. So this has now been updated and fixed.
 
 Also there where some issues regarding names that could not contain . (dot) and ohter special characters that has been fixed, a new way of handlign reource id now prevent problems related to naming restrictions.
