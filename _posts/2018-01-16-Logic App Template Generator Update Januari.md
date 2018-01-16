@@ -3,7 +3,7 @@ layout: post
 title: Januari update Logic App Template Creator
 author: Mattias Lögdberg
 tags: [Logic Apps, ARM Template,Logic Apps Template Generator]
-categories: [Logic Apps]
+categories: [LogicApps]
 image: 
 description: 
 permalink: /logicapps/template-extractur-update-januari
