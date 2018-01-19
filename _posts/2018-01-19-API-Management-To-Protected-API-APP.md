@@ -30,7 +30,7 @@ In the Azure Portal head to the API App and go in to the settings tab **"Authent
 
 Now we can enable several diffrent providers but in this demo we will focus on the Azure Active Directory, press the Active Directory,
 
-![Configure Azure AD Athentication](/assets/uploads/2018/01/Enable_Authentaction_AppService_providers.png
+![Configure Azure AD Athentication](/assets/uploads/2018/01/Enable_Authentaction_AppService_providers.png)
 
 Here we can choose to use an existing AD Application or create a new one, I will create a new one named *ProtectedAppAAD*
 
