@@ -25,8 +25,14 @@ In this post we have used the standard generated API App from Visual Studio and 
 
 In the Azure Portal head to the API App and go in to the settings tab **"Authentication/Authorization"**. Enable the App Service Authentication by pressing the *On* button.
 
-![Scenario Overview](/assets/uploads/2018/01/Enable_Authentaction_AppService.png)
+![Enable Authentication/Ahithorization](/assets/uploads/2018/01/Enable_Authentaction_AppService.png)
 
+
+Now we can enable several diffrent providers but in this demo we will focus on the Azure Active Directory, press the Active Directory,
+
+![Configure Azure AD Athentication](/assets/uploads/2018/01/Enable_Authentaction_AppService_providers.png
+
+Here we can choose to use an existing AD Application or create a new one, I will create a new one named *ProtectedAppAAD*
 
 ## Create the API 
 
