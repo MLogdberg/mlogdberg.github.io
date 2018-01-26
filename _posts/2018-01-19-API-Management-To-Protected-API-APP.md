@@ -28,9 +28,11 @@ In the Azure Portal head to the API App and go in to the settings tab **"Authent
 ![Enable Authentication/Ahithorization](/assets/uploads/2018/01/Enable_Authentaction_AppService.png)
 
 
-Now we can enable several diffrent providers but in this demo we will focus on the Azure Active Directory, press the Active Directory,
+Now we can enable several diffrent providers and in this demo we will focus on the Azure Active Directory, press the Active Directory,
 
 ![Configure Azure AD Athentication](/assets/uploads/2018/01/Enable_Authentaction_AppService_providers.png)
+
+After chosing the Azure Active Directory, we are presented with 2 options to configure the Azure Active Directory setup, Express gives some guidance and possiblity to create or select an existing AD Application meawhile advance requires the AD Application clientid and the issuer normaly *https://sts.windows.net/{tenantguid}/* followed by the tenat guid URL. But in this setup we will use the Express option and create a new AD Application.
 
 Here we can choose to use an existing AD Application or create a new one, I will create a new one named *ProtectedAppAAD*
 
