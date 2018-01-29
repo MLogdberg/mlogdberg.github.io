@@ -138,6 +138,6 @@ The full represenatation of the swagger can also be found at my GitHub repositor
 }
 ```
 
-Make sure to add both the swagger **and** the **backendService** object since the url specified in the **serviceUrl** is the one that is used in the Custom Connector during runtime, not the one specified in the swagger, this is good for easier management of dev/test/prod environments.
+Make sure to add both the swagger **and** the **backendService** object since the url specified in the **serviceUrl** since this is mandator and the URL that the Custom Connector are using during runtime, not the one specified in the swagger, this is good for easier management of dev/test/prod environments.
 
 The Custom Connector is a great addon to Logic Apps and by been able to easily manage and deploy them is crusial, so even if this is great to be able to manage my Custom Connector via ARM I'm still missing the possibility to reference my swagger via a url since that would be most suitable way of deploying and kkeping the ARM template and swagger separated.
