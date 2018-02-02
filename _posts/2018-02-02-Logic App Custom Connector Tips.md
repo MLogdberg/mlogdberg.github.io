@@ -10,14 +10,14 @@ permalink: /logicapps/custom-connector-wsdl-tips
 ---
 
 So continue my journey with the **Logic Apps Custom Connector** and this time we are doing some work with the WSDL part of the **Logic Apps Custom Connector** and I thought I would share some tips and trix I've learned and are using when importing and using Connectors with WSDL.
-Since the only way to be a good user of a resource like the *Cusotom Connector* is to understand how we can investigate behaviors, tweak and fix problems and find debug/logs.
+Since the only way to be a good user of a resource like the *Custom Connector* is to understand how we can investigate behaviors, tweak and fix problems and find debug/logs.
 
 ## Import Error 
 There are several reasons why there will be errors when importing the WSDL and since it's API Management functionality we can (until documentation is up to speed) see the limits on the API Management site:
 
 [https://docs.microsoft.com/en-us/azure/api-management/api-management-api-import-restrictions#wsdl](https://docs.microsoft.com/en-us/azure/api-management/api-management-api-import-restrictions#wsdl)
 
-I encountered the "rare" error with recursive objects, apparently there where a "lazy" coder that just referenced the whole entity in a parent child situation even if the only "needed" field was the *ID*. Anyway removing the recursive element solves the problem,alernatively manipulating the representation could have been done.
+I encountered the "rare" error with recursive objects, apparently there where a "lazy" coder that just referenced the whole entity in a parent child situation even if the only "needed" field was the *ID*. Anyway removing the recursive element solves the problem,alternatively manipulating the representation could have been done.
 
 ## Runtime problems, unexpected behaviors and errors from the backend system
 So there are many reasons why there can be errors sent from the backend system but one of the common ones I've found is *System.FormatException: Input string was not in a correct format* and that is due to a element specified as *int* and the value sent in is **null**. Now how can that be a problem?
@@ -217,12 +217,12 @@ But when using the *Custom Connector* all the complex structures are mapped: (th
 			</soap:Envelope>
 		</set-body>
 ```
-And we start running in to problems due to the fact that we are not sending in more data than earlier but the generated xml is mutch larger and just look at the enourmus representation in the GUI:
+And we start running in to problems due to the fact that we are not sending in more data than earlier but the generated xml is much larger and just look at the enormous representation in the GUI:
 
 ![Unmodified Connector in GUI](/assets/uploads/2018/02/LogicAppCustomConnectorBeforeEdit.png)
 
-Therfore we get  some unwanted errors since there are som implications added when sending in starts kin complex structures, since I can't really do mutch about the Logic I need to modify the data sent in, but I can modify the WSDL and reimport it.
-So after changing the WSDL to only contain the elemtns that I needed in my request it looks alot better and the xml message sent are now matching the sample:
+Therefore we get  some unwanted errors since there are some implications added when sending in starts kin complex structures, since I can't really do much about the Logic I need to modify the data sent in, but I can modify the WSDL and reimport it.
+So after changing the WSDL to only contain the elements that I needed in my request it looks alot better and the xml message sent are now matching the sample:
 
 Modified definition in the WSDL so the definition is minimal:
 
@@ -252,10 +252,10 @@ Sample from the GUI:
 ![Unmodified Connector in GUI](/assets/uploads/2018/02/LogicAppCustomConnectorEdited.png)
 
 The request can now be sent to the backend without any problems.
-This apporach can be used to both detect problems and also understand the behavior of the **Custom Connector** and changeing the WSDL can help us to easier use the Connector even if the maintainance is heavier and we need to keep track of these changes and do the again if a update WSDL would be imported.
+This approach can be used to both detect problems and also understand the behavior of the **Custom Connector** and changeing the WSDL can help us to easier use the Connector even if the maintainance is heavier and we need to keep track of these changes and do the again if a update WSDL would be imported.
 
 ## Summary
-As stated we need to find the ways of understanding the resource before beeing good users of it, so I hope this will help out and give ideas around workarounds for some troublesome scnarios and that more debug and customization properties is coming along the way.
+As stated we need to find the ways of understanding the resource before beeing good users of it, so I hope this will help out and give ideas around workarounds for some troublesome scenarios and that more debug and customization properties is coming along the way.
 When more power is needed I would advise using API Management for now until there is more customization properties but most of the time it works like a charm!
 
 
