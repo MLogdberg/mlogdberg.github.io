@@ -49,7 +49,7 @@ Let's take a look why, bellow is the sample a fairly easy message with few eleme
   </soap:Body>
 </soap:Envelope>
 ```
-But when using the *Custom Connector* all the complex structures are mapped: (this is generated via API Management)
+But when using the *Custom Connector* all the complex structures are mapped: (this is generated via API Management):
 ```
  <set-body template="liquid">
 			<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://ongoingsystems.se/WSI">
@@ -221,12 +221,35 @@ And we start running in to problems due to the fact that we are not sending in m
 
 ![Unmodified Connector in GUI](/assets/uploads/2018/02/LogicAppCustomConnectorBeforeEdit.png)
 
-
 Therfore we get  some unwanted errors since there are som implications added when sending in starts kin complex structures, since I can't really do mutch about the Logic I need to modify the data sent in, but I can modify the WSDL and reimport it.
 So after changing the WSDL to only contain the elemtns that I needed in my request it looks alot better and the xml message sent are now matching the sample:
 
-![Unmodified Connector in GUI](/assets/uploads/2018/02/LogicAppCustomConnectorEdited.png)
+Modified definition in the WSDL so the definition is minimal:
 
+```
+<s:complexType name="ArticleDefinition">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ArticleOperation" type="tns:ArticleOperation" />
+          <s:element minOccurs="1" maxOccurs="1" name="ArticleIdentification" type="tns:ArticleIdentificationType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArticleNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArticleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArticleDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArticleUnitCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsStockArticle" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Weight" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="NetWeight" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Volume" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Length" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Width" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Height" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="QuantityPerPallet" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="QuantityPerPackage" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+```
+Sample from the GUI:
+
+![Unmodified Connector in GUI](/assets/uploads/2018/02/LogicAppCustomConnectorEdited.png)
 
 The request can now be sent to the backend without any problems.
 This apporach can be used to both detect problems and also understand the behavior of the **Custom Connector** and changeing the WSDL can help us to easier use the Connector even if the maintainance is heavier and we need to keep track of these changes and do the again if a update WSDL would be imported.
