@@ -124,14 +124,13 @@ The Get OAuth2 access token from AAD snipet looks like this.
 ```
 
 The way it works is that 2 things happen before we send the request to the backend.
-1. First a request (<send-request>) is made to the AAD tenant and aquiring a token.
-2. The <set-header> section is adding the token in the Authroization header.
+1. First a request in the **send-request** action is made to the AAD tenant and aquiring a token.
+2. The **set-header** action is adding the token in the Authroization header, by extracting it from the result from the first request.
 
 But before we can add this snippet to our API we need to add a few values to the **Named Values** section in our API Management instance.
 
 * authorizationServer - the tenant URL
 My tenant ID is *1cb87777-3df4-428b-811a-86a0f215cd35* so the URL then is *https://login.microsoftonline.com/1cb87777-3df4-428b-811a-86a0f215cd35/oauth2/token*
-
 * clientId - the Application id of our AAD Application in this case of *APIManagementAADApp*
     * ![AAD Application id APIManagementAADApp](/assets/uploads/2018/03/aadapp_get_Application_id_apim.png)
 * clientSecret - the key to our AAD Application in this case of *APIManagementAADApp*
