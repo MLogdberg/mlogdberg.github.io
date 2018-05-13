@@ -9,16 +9,15 @@ description:
 permalink: /api-management/template-creator-updates-May-2018
 ---
 
-Updates on the API Management Template Creator has been dragging but now I'm pleased to have fixed the two most urgent ones.
-[https://github.com/MLogdberg/APIManagementARMTemplateCreator](https://github.com/MLogdberg/APIManagementARMTemplateCreator)
+Updates on the [API Management Template Creator](https://github.com/MLogdberg/APIManagementARMTemplateCreator) has been dragging but now I'm pleased to have fixed the two most urgent ones.
 
 * Support for Versions, with version sets
 * Schemas
 
-## Support for Versions, with version sets
-IF an API that is extracted has enabled the current versionset is also extracted and provided inside the ARM Template.
+## Support for Versions, with Version Sets
+If an API that is extracted has enabled the current versionset is also extracted and provided inside the ARM Template.
 The version set states the version that is used and is needed byt the API to be able to support versions, it contains the information about how the verions is handled for the specific API.
-The sample bellow is using a HTTP header named API-Version to set the version of the API.
+The sample bellow is using a *HTTP header* named **API-Version** to set the version of the API, the version later is then set on the API itself.
 
 
 Read more in the documentation: [https://docs.microsoft.com/en-us/azure/templates/microsoft.apimanagement/service/api-version-sets ](https://docs.microsoft.com/en-us/azure/templates/microsoft.apimanagement/service/api-version-sets)
@@ -42,11 +41,10 @@ Read more in the documentation: [https://docs.microsoft.com/en-us/azure/template
 
 
 ## Support for Schema
-IF an API has schemas added to oeprations these schemas will be extracted and added to the ARM template, all operations will also have a "dependsOn" to the specific schema to prevent errors when executing the ARM template.
+If an API has schemas added to oeprations these schemas will be extracted and added to the ARM template, all operations will also have a "dependsOn" to the specific schema to prevent errors when executing the ARM template.
 The sample bellow is a simple schema that is added in the ARM template and referenced in the Operations section.
 
 Read more in the documentation: [https://docs.microsoft.com/en-us/azure/templates/microsoft.apimanagement/service/apis/schemas ](https://docs.microsoft.com/en-us/azure/templates/microsoft.apimanagement/service/apis/schemas)
-
 ```
 {
           "comments": "Generated for resource /subscriptions/fake439-770d-43f3-9e4a-8b910457a10c/resourceGroups/API/providers/Microsoft.ApiManagement/service/dev/apis/arkivet/schemas/5af038365b73730dd01453ad",
