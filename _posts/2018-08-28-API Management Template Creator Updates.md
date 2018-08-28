@@ -19,7 +19,7 @@ A minor thing for usage but great for consistency and quality in the generator i
 
 ## Functions support added
 Finally the support for API's that are generated from Functions is live, now an API generated from Functions get the appropiate automatic generation of function keys via ARM functions.
-Meaning that you don't need to supply the function kode in the parameter files they are collected automatically from the function vi the Listsecrets function in ARM.
+Meaning that you don't need to supply the function kode in the parameter files they are collected automatically via Listsecrets function in ARM.
 
 **Now:**
 ```
