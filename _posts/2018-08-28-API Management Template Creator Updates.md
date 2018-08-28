@@ -22,6 +22,7 @@ Finally sthe support for API's that are generated from Functions is live, now an
 Meaning that you don't need to supply the function kode in the parameter files they are collected automatically from the function vi the Listsecrets function in ARM.
 
 **Now:**
+```
 {
       "comments": "Generated for resource /subscriptions/c107df29-a4af-4bc9-a733-f88f0eaa4296/resourceGroups/PreDemoTest/providers/Microsoft.ApiManagement/service/ibizmalo/properties/5b41934c6d0f59440d20c5ee",
       "type": "Microsoft.ApiManagement/service/properties",
@@ -36,6 +37,7 @@ Meaning that you don't need to supply the function kode in the parameter files t
       "resources": [],
       "dependsOn": []
     }
+```
 
 **Previously:**
 ```
