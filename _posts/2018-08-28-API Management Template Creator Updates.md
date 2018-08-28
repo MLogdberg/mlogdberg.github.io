@@ -18,7 +18,7 @@ A minor thing for usage but great for consistency and quality in the generator i
 * Removed some name parameter generation
 
 ## Functions support added
-Finally sthe support for API's that are generated from Functions is live, now an API generated from Functions get the appropiate automatic generation of function keys via ARM functions.
+Finally the support for API's that are generated from Functions is live, now an API generated from Functions get the appropiate automatic generation of function keys via ARM functions.
 Meaning that you don't need to supply the function kode in the parameter files they are collected automatically from the function vi the Listsecrets function in ARM.
 
 **Now:**
@@ -70,7 +70,7 @@ Two bigger things has been targeted to improve the export and later deployment e
 ### Trigger name fix
 A Logic App Trigger can now have any name, previous it was hardcoded to 'Manual'. There is now logic added to retrieve the information at extraction time, the extractor fetches the Logic App definition and finds the HTTP trigger to get the correct name.
 
-Trigger name is extracted from the Logic App and added to the ARM functions (**customtriggername** in bellow sample):
+Trigger name is extracted from the Logic App and added to the ARM functions (**customtriggername** in below sample):
 
 ![Logic App Trigger name](/assets/uploads/2018/08/logicappimagecustomtrigger.png)
 
@@ -81,7 +81,7 @@ Will result in (note the **'customtriggername'**):
 ```
 
 ### Add Logic App as operation to exisitng API fix
-There has been diffrent behavior between API's generated from a Logic App imported as a new operation to an existing API. The main diffrent has been that the sig has been added as a "normal" parameter and no ARM functionality added to generate the *sig*. This is now adressed and the appropiate ARM functions will be added to this aswell and the sig will be generated automatically for both types.
+There has been diffrent behavior between API's generated from a Logic App imported as a new operation to an existing API. The main diffrent has been that the sig has been added as a "normal" parameter and no ARM functionality added to generate the *sig*. This is now adressed and the appropiate ARM functions will be added and generated automatically for both types.
 
 Properties will get value from the *[ListCallBackUrl]* function:
 ```
