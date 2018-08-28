@@ -11,7 +11,7 @@ permalink: /api-management/template-creator-updates-Aug-2018
 
 Updates on the [API Management Template Creator](https://github.com/MLogdberg/APIManagementARMTemplateCreator) has been published a few weeks back:
 
-A minior thing for usage but great for consistency and quality in the generator is that there are alot of tests added. 
+A minor thing for usage but great for consistency and quality in the generator is that there are alot of tests added. 
 
 * Functions support added
 * Updated Logic App Support 
