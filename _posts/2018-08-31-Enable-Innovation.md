@@ -79,6 +79,6 @@ All in all, the prototype was easy and fast to build, but most importantly it su
 ## Summary:
 The app is currently under development and we have more of these innovative prototypes coming up to prototype new or upgraded functionality in a variety of sizes. Best part of using this approach is that we can create a prototype in a day or two providing fast prototyping, giving decision makers a visual and testable solution to review. All thanks to our hard work with API’s, workflows and the amazing tools Power Apps and Flow!
 
-Become the **Integration Hero** and show the business the **innovation power** that is hidden in their business.
+Become the **Integration Hero** and show business the unused **innovation power** you have!
 
 ![Help Business Evolve](/assets/uploads/2018/08/mlogdberg-help-business-evolve.jpg)
