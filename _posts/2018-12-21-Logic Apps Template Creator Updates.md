@@ -33,7 +33,7 @@ PS> Update-Module -Name APIManagementTemplate
 ```
 
 ## Split the Template to a template per resource
-In order to follow the best pratice from [Azure API Management DevOps example](https://github.com/Azure/azure-api-management-devops-example) we now have a new command **Write-APIManagementTemplates** this command will take a template as input and split into a file per resource to make it easy to manage and handle files and create more customized deployment with a linked template. [Read more at github](https://github.com/MLogdberg/APIManagementARMTemplateCreator)
+In order to follow the best pratice from [Azure API Management DevOps example](https://github.com/Azure/azure-api-management-devops-example) we now have a new command **Write-APIManagementTemplates** this command will take a template as input and split into a file per resource to make it easy to manage and handle files and create more customized deployment with a linked template. [Read more at GitHub](https://github.com/MLogdberg/APIManagementARMTemplateCreator)
 
 ```powershell
  Get-APIManagementTemplate -APIManagement MyApiManagementInstance -ResourceGroup myResourceGroup -SubscriptionId 80d4fe69-xxxx-4dd2-a938-9250f1c8ab03 | Write-APIManagementTemplates -OutputDirectory C:\temp\templates -SeparatePolicyFile $true
