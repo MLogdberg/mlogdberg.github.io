@@ -1,12 +1,12 @@
 ---
 layout: post
-title: API Management Template Creator Updates August 2018 
+title: API Management Template Creator Updates December 2018 
 author: Mattias Lögdberg
 tags: [API Management, Integration,ARM Templates, ARM]
 categories: [API Management]
 image: 
 description: 
-permalink: /api-management/template-creator-updates-Aug-2018
+permalink: /api-management/template-creator-updates-Dec-2018
 ---
 
 Updates on the [API Management Template Creator](https://github.com/MLogdberg/APIManagementARMTemplateCreator) has been published:
@@ -16,6 +16,7 @@ I've got a lot of help this time frome some awesome contributors a big thanks to
 A minor thing for usage but great for consistency and quality in the generator is that there is now a build and release pipeline setup in DevOps. 
 
 * Improved support for Identity Providers, Products and more
+* Added automation for Build & Release via DevOps to increase quality in merged sprints and automate release to PowerShell Gallery
 * Added to PowerShell Gallery [APIManagementTemplate](https://www.powershellgallery.com/packages/APIManagementTemplate/)
 * Split the Template to a template per resource to follow [API Management DevOps best pratices](https://github.com/Azure/azure-api-management-devops-example)
 
