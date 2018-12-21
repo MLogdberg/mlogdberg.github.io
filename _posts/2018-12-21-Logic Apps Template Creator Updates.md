@@ -33,8 +33,11 @@ PS> Update-Module -Name APIManagementTemplate
 ```
 
 ## Split the Template to a template per resource
-In order to follow the best pratice from [Azure API Management DevOps example](https://github.com/Azure/azure-api-management-devops-example) we now have a new command **Write-APIManagementTemplates** this command will take a template as input and split into a file per resource to make it easy to manage and handle files and create more customized deployment with a linked template.
+In order to follow the best pratice from [Azure API Management DevOps example](https://github.com/Azure/azure-api-management-devops-example) we now have a new command **Write-APIManagementTemplates** this command will take a template as input and split into a file per resource to make it easy to manage and handle files and create more customized deployment with a linked template. [Read more at github](https://github.com/MLogdberg/APIManagementARMTemplateCreator)
 
+```powershell
+ Get-APIManagementTemplate -APIManagement MyApiManagementInstance -ResourceGroup myResourceGroup -SubscriptionId 80d4fe69-xxxx-4dd2-a938-9250f1c8ab03 | Write-APIManagementTemplates -OutputDirectory C:\temp\templates -SeparatePolicyFile $true
+```
 
 ## Summary:
 Exporting API's ia the [API Management Template Extractor](https://github.com/MLogdberg/APIManagementARMTemplateCreator) simplifies the CI area of using API Management, here we can select a specific API and export only that API, with Operations, version sets, schemas, properties etc. Without needing to manually add extra work, making the development inside the portal and then just extracting the work and setup the import to the next environment .
