@@ -6,7 +6,7 @@ tags: [Logic Apps, ARM Template,Logic Apps Template Generator]
 categories: [LogicApps]
 image: 
 description: 
-permalink: /logicapps/template-extractur-update-januari
+permalink: /logicapps/template-extractor-update-januari
 ---
 
 There has been some time since last updates where announced on the Logic App Template Creator, but work has been ongoing thanks to contributors so time to form out the new updates.
