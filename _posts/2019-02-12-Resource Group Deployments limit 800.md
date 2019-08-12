@@ -82,7 +82,7 @@ foreach( $resouregroup in $ResourceGroups) {
     Write-Output ("Deployments: '{0}'" -f $deployments.Count)
 
     if($deployments.Count -gt 100 ) {
-        $deploymentsToDelete = $deployments | where { $_.Timestamp -lt ((get-date).AddDays($daysBackToKeep)) }
+        $deploymentsToDelete = $deployments | where { $_.Timestamp -lt ((get-date).AddDays(-1*$daysBackToKeep)) }
         Write-Output ("Deloyments to delete: '{0}'" -f $deploymentsToDelete.Count )
         foreach ($deployment in $deploymentsToDelete) { 
 
