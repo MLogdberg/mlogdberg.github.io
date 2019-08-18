@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Functions understand logs in Application Insights
+title: Azure Functions logs in Application Insights
 author: Mattias Lögdberg
 tags: [Azure Functions, Integration,Serverless, Application Insights]
 categories: [Azure Functions, Application Insights]
