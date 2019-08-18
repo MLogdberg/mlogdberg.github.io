@@ -130,9 +130,45 @@ And as you can see we get the filtered result after pressing the green confirm b
 
 Adding more *Tags* will allow more possibliites for search, the tag will be attached only to the request log entry and not to the following traces, if we need to keep track of thing inside loops we need to introduce another way of logging.
 
+## Add custom properties that will span all upcoming logs
+Sometimes we need to add some data that will be added as properties to all upcoming logs, this can be done via the *BeginScope*, with the following line all upcoming logs will automatically have the market and productnumber added as properties, the are added as with a prefix of *prop_*
 
+```csharp
+	using (log.BeginScope("Function3 processed message for {market} with productnumber {productnumber}", market, productnumber))
+	{
+		log.LogInformation("Processing Lines");
+	}
+```
 
+Upcoming Log entry will have **prop_market** and **prop_productnumber**.
 
+![Properties added with Begin Scope](/assets/uploads/2019/08/functionsAi-viewCustomPeropertiesBeginScope.png)
+
+One good use is to do looping over multiple items, and therefore all entries will have these properties added, also all other properties added with the *{}* format in *log.Information* as **lineNumber** and **guid** in bellow sample will be added in the customDimension with prefix **prop_**
+
+```csharp
+	 log.LogInformation("Processing {lineNumber} and random guid {guid}",i.ToString(),Guid.NewGuid().ToString());
+```
+
+And if we want to loop over multiple lines we can add an extra scope to make sure we log the specific unique data for each iteration, following we log the *lineNumber* and a random *guid* and as you can see we still have the productnumber and market from before all with the **prop_** prefix.
+
+![Properties added with Begin Scope](/assets/uploads/2019/08/functionsAi-viewCustomPeropertiesBeginScopeLoop.png)
+
+Code sample of the loop
+
+```csharp
+	using (log.BeginScope("Function3 processed message for {market} with productnumber {productnumber}", market, productnumber))
+    {
+	    log.LogInformation("Processing Lines");
+	    for (int i = 0; i < 10; i++)
+	    {
+	        using (log.BeginScope("Function3 Processing line {lineNumber}", i.ToString()))
+	        {
+	            log.LogInformation("Processing {lineNumber} and random guid {guid}",i.ToString(),Guid.NewGuid().ToString());
+	        }
+	    }
+	}
+```
 ## Connecting cutom logs from TelemetryClient
 Either we need more custom logging options than the one the standard *ILogger* provides or we have alot of logging today that is not connected to the endo to end scenario. We need attach these to our end-to-end logging experience via the **TelemtryClient** to take advantage of the more advanced logging features.
 
@@ -152,6 +188,32 @@ From the Message object we can extract the Activity, this is an extension in the
             telemetryClient.TrackTrace("Received message");
 ```
 
+This can also be done from a HTTP call [read more](https://docs.microsoft.com/en-us/azure/azure-monitor/app/custom-operations-tracking#http-request-in-owin-self-hosted-app).
+
+```csharp
+   // If there is a Request-Id received from the upstream service, set the telemetry context accordingly.
+    if (context.Request.Headers.ContainsKey("Request-Id"))
+    {
+        var requestId = context.Request.Headers.Get("Request-Id");
+        // Get the operation ID from the Request-Id (if you follow the HTTP Protocol for Correlation).
+        telemetryClient.Context.Operation.Id = GetOperationId(requestId);
+        telemetryClient.Context.Operation.ParentId = requestId;
+    }
+		
+	//GetOperationId method
+	public static string GetOperationId(string id)
+    {
+        // Returns the root ID from the '|' to the first '.' if any.
+        int rootEnd = id.IndexOf('.');
+        if (rootEnd < 0)
+            rootEnd = id.Length;
+
+        int rootStart = id[0] == '|' ? 1 : 0;
+        return id.Substring(rootStart, rootEnd - rootStart);
+    }
+```
+
+
 Now we will also add this small line of code that trackes an event.
 
 ```csharp
@@ -165,17 +227,13 @@ And this can now be found in the end-to-end tracing.
 ![Event in Overview](/assets/uploads/2019/08/functionsAi-customEventOverview.png)
 ![Event in Telemetrylist](/assets/uploads/2019/08/functionsAi-endtoendoevent.png)
 
+
+
 Read more: 
 * [https://docs.microsoft.com/en-us/azure/azure-monitor/app/custom-operations-tracking](https://docs.microsoft.com/en-us/azure/azure-monitor/app/custom-operations-tracking)
 * [https://docs.microsoft.com/en-us/azure/azure-monitor/app/api-custom-events-metrics](https://docs.microsoft.com/en-us/azure/azure-monitor/app/api-custom-events-metrics)
 
 ## Summary:
-The problem is that the extension is not properly installed and when we add the extension in the configuration without the extension installed the Function App chrashes as produces the **app_offline.htm** and if it's present in the folder the response is defaulted to 503 and Host Offline, by removing the file the Function App starts executing as normal and if we have fixed the extensions no errors comes up. This works for all extensions.
+I love developing in Azure Functions but in order to have a good Operations experience there is alot of things to consider in the logging strategy to make sure it's easy to understand what is going on and how to take advantage of the statistics provided by Application Insights.
 
-By showing the problem and the reproduce scenario we can help out improving the products! So I hope this helps anyone and leads to a fix from the prodcut team.
-
-
-
-
-
-, 
+This post is about how things can be done and hopefully this can be a guidance in creating a better logging experience, we want to avoid the developers "let me just attach my debugger" response to what is the problem with the flow running in production.
