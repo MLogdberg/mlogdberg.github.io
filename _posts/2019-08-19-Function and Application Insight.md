@@ -170,7 +170,7 @@ Code sample of the loop
 ## Add Filterable Property to Request
 Let's say that we want to not just find a specific run, we want to understand overall performance or errors on a more wider term, like for a market. Let's consider we want to understand performance or failures for a specific market. This is done via the *Performance* or *Failures* tabs, but in order to narrow down the data presented we need to be able to filter the data like the the image bellow adding a filter on **Market**.
 
-![ProductNumber log row](/assets/uploads/2019/08/functionsAi-performance-expectedsearch.PNG)
+![ProductNumber log row](/assets/uploads/2019/08/functionsAi-performance-expectedsearch.png)
 
 To get this working we need to add an property to our request log. (The request log is the first log event, see the telemetry for more information) the code to achieve this is super simple we just need to add this small snippet of code:
 
@@ -208,11 +208,11 @@ This will now give us the following result:
 
 In the *Search* section we can pick the **Market** in the filter to build our queries.
 
-![Search with add filter Market](/assets/uploads/2019/08/functionsAi-searchMarket.PNG)
+![Search with add filter Market](/assets/uploads/2019/08/functionsAi-searchMarket.png)
 
 In the Search section we can pick the **Market** in the filter to build our queries.
 
-![Search with add filter Market](/assets/uploads/2019/08/functionsAi-searchMarket.PNG)
+![Search with add filter Market](/assets/uploads/2019/08/functionsAi-searchMarket.png)
 
 In the *Performance* and *Failures* sections we need to add a bit more to be able to work with the filter, we need to add **customDimensions** before **Market** making the filter look like **customDimensions.Market**.
 
