@@ -208,19 +208,27 @@ This will now give us the following result:
 
 In the *Search* section we can pick the **Market** in the filter to build our queries.
 
+
 ![Search with add filter Market](/assets/uploads/2019/08/functionsAi-searchMarket.png)
+
 
 In the Search section we can pick the **Market** in the filter to build our queries.
 
+
 ![Search with add filter Market](/assets/uploads/2019/08/functionsAi-searchMarket.png)
+
 
 In the *Performance* and *Failures* sections we need to add a bit more to be able to work with the filter, we need to add **customDimensions** before **Market** making the filter look like **customDimensions.Market**.
 
+
 ![Search with add filter Market](/assets/uploads/2019/08/functionsAi-perfromancecustomdimensionsearch.png)
+
 
 And as you can see we get the filtered result after pressing the green confirm button.
 
+
 ![Search with add filter Market](/assets/uploads/2019/08/functionsAi-perfromancecustomdimensionsearchafter.png)
+
 
 Adding more *Tags* will allow more possibliites for search, the tag will be attached only to the request log entry and not to the following traces. But I would recomend logging both a id and a more broader value like market or similar to find errors/performace issues that span a broader range.
 
