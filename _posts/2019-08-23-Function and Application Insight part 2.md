@@ -9,7 +9,7 @@ description:
 permalink: /2019/02/functions/understandhowlogsinaipart2
 ---
 
-In part one we covered the ILogger interface and what it's providing for us, but sometimes we want more control of our logging or we have allready implemented alot of custom logging and just want to "connect" the logging to our **end-to-end** experience.
+In part one I covered the ILogger interface and what it's providing for us, but sometimes we want more control of our logging, enrich oru logging or we have allready implemented alot of logging with *TelemtryClient* and just want to connect the logging to our **end-to-end** experience.
 
 We use the same Scenario, a message is recieve via API Management, sent to a Azure Function that publishes the message on a topic, a second Azure Function reads the published message and publishes the message on a second topic, a third Azure Function recieves the message and sends the message over http to a Logic App that represents a "3:e party system".
 
@@ -19,11 +19,11 @@ Read more about the scenario background and the standard *ILogger* interface in 
 
 
 ## Connecting custom logs from TelemetryClient
-Either we need more custom logging options than the one the standard *ILogger* provides or we have alot of logging today that is not connected to the endo to end scenario. We need attach these to our end-to-end logging experience via the **TelemtryClient** to take advantage of the more advanced logging features.
+If we need more custom logging options than the provided in the standard *ILogger* provides or we have alot of logging today with *TelemetryClient* that is not connected to the endo to end scenario. We need attach these to our end-to-end logging experience via the **TelemtryClient** to take advantage of the more advanced logging features.
 
 In order to achieve this we need to add some context properties to our instance, here is one way to do this via Service Bus, here we recieve the Message object.
 
-From the Message object we can extract the Activity, this is an extension in the *Microsoft.Azure.ServiceBus.Diagnostics* namespace. From this we can get the *RootId* and *ParentId* wich is the current Operation Id and the parent id. [Read more on how the Operation id is built and how the hierarchy is designed](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/HierarchicalRequestId.md)
+From the Message object we can extract the Activity, this is an extension found in the *Microsoft.Azure.ServiceBus.Diagnostics* namespace. From the result of this operation we can get the *RootId* and *ParentId* wich is the values for  the current Operation Id and the parent id. [Read more on how the Operation id is built and how the hierarchy is designed](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/HierarchicalRequestId.md)
 
 ```csharp
 public string Run([ServiceBusTrigger("topic1", "one", Connection = "servicebusConnection")]Message message, ILogger log)
@@ -77,15 +77,15 @@ And this can now be found in the end-to-end tracing.
 ![Event in Telemetrylist](/assets/uploads/2019/08/functionsAi-endtoendoevent.png)
 
 ## Adding an Extra "Operation"
-When processing messages some of the steps are bigger and more important to understand, this could be a complex transformation or just a set of steps that we want to group.
-Then we can use the *StartOperation* in *TelemetryClient*, this will start the scope for the *Operation* and it will be open until we execute the operation *StopOperation*.
+This is probobly my favorit thing in all of this, when processing messages some parts of the process are bigger and/or more important to understand, this could be a complex transformation or just a set of steps that we want to group.
+Then we can use the *StartOperation* in *TelemetryClient*, this will start the scope for the *Operation* and it will be open until we execute the operation *StopOperation* it has a status and we can set some properties and get execution time of the process.
 
-An Operation is either a Dependency Operation, intended to mark dependency to other resources or a RequestOperation meant for marking a creation of a request.
+An Operation is either a *DependencyOperation*, intended to mark dependency to other resources or a *RequestOperation* meant for marking a creation of a request.
 I will use a DependencyOperation in my case since it's the most alike operation for my purpose, I use it to mark that a more complex logic has been executed in my function and what the result of it was.
 
-I use this i.e. when I process alot of items in my Function to mark that they are executed, like processing a record in a list.
+I use this in several pways one is when I process alot of items in my Function to mark that they are executed, like processing a record in a list.
 
-In my example bellow I'll demonstrate the usage of an operation by doing a simple for loop and simulating processing of a lineadding  aprocess
+In my example bellow I'll demonstrate the usage of an operation by doing a simple for loop and simulating processing of a line and adding some valuable metadata. As a tip set *Data* the a serialized version fo the object that is processed so it's easier to understand/debug etc.
 
 ```csharp
 for (int i = 0; i < 10; i++)
@@ -108,7 +108,7 @@ This will result in a mutch more detailed log in the **End-To-End** overview
 
 ![Operation in Overview](/assets/uploads/2019/08/functionsAi-endtoendwithoperation.png)
 
-Custo properties is easily seton each operation for traceability or information
+Custom properties is easily set on each operation for traceability or information, bellow is how we can add **LineID** as a custom property.
 
 ```csharp
 op.Telemetry.Context.GlobalProperties.Add("LineID", i.ToString());
