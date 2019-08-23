@@ -132,4 +132,6 @@ Read more:
 ## Summary:
 In this second part we have covered more advanced logging with TelemetryClient or to connect your current TelemetryClient logging to the End-To-End experience provided by Application Insights.
 
+The StartOperation is really powerfull when used to make visibility to what is happening, but I would like to have a third option for an Operation since using the Dependency sounds wrong when it's a section of the code in the same process, but it works!
+
 This post is about how things can be done and hopefully this can be a guidance in creating a better logging experience, we want to avoid the developers "let me just attach my debugger" response to what is the problem with the flow running in production.
