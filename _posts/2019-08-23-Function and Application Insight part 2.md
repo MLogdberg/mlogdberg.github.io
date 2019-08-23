@@ -83,7 +83,7 @@ Then we can use the *StartOperation* in *TelemetryClient*, this will start the s
 An Operation is either a *DependencyOperation*, intended to mark dependency to other resources or a *RequestOperation* meant for marking a creation of a request.
 I will use a DependencyOperation in my case since it's the most alike operation for my purpose, I use it to mark that a more complex logic has been executed in my function and what the result of it was.
 
-I use this in several pways one is when I process alot of items in my Function to mark that they are executed, like processing a record in a list.
+I use this in several ways one is when I process alot of items in my Function to mark that they are executed, like processing a record in a list, another is hwne performing a complex transformation.
 
 In my example bellow I'll demonstrate the usage of an operation by doing a simple for loop and simulating processing of a line and adding some valuable metadata. As a tip set *Data* the a serialized version fo the object that is processed so it's easier to understand/debug etc.
 
