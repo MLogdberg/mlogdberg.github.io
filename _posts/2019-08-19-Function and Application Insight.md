@@ -128,7 +128,7 @@ So now we know this request is processing the specific product, this is searchab
 
 
 ## Create a log scope with BeginScope
-Sometimes we need to add some data that will be added as properties to all upcoming logs, this can be done via the *BeginScope*, with the following line all upcoming logs will automatically have the market and productnumber added as properties, the are added as with a prefix of *prop_*
+Sometimes we need to add some data that will be added as properties to all upcoming logs, this can be done via the *BeginScope*, with the following line all upcoming logs will automatically have the market and productnumber added as properties, the are added as with a prefix of *prop__*
 
 ```csharp
 	using (log.BeginScope("Function3 processed message for {market} with productnumber {productnumber}", market, productnumber))
@@ -141,13 +141,13 @@ Upcoming Log entry will have **prop_market** and **prop_productnumber**.
 
 ![Properties added with Begin Scope](/assets/uploads/2019/08/functionsAi-viewCustomPeropertiesBeginScope.png)
 
-One good use is to do looping over multiple items, and therefore all entries will have these properties added, also all other properties added with the *{}* format in *log.Information* as **lineNumber** and **guid** in bellow sample will be added in the customDimension with prefix **prop_**
+One good use is to do looping over multiple items, and therefore all entries will have these properties added, also all other properties added with the *{}* format in *log.Information* as **lineNumber** and **guid** in bellow sample will be added in the customDimension with prefix **prop__**
 
 ```csharp
 	 log.LogInformation("Processing {lineNumber} and random guid {guid}",i.ToString(),Guid.NewGuid().ToString());
 ```
 
-And if we want to loop over multiple lines we can add an extra scope to make sure we log the specific unique data for each iteration, following we log the *lineNumber* and a random *guid* and as you can see we still have the productnumber and market from before all with the **prop_** prefix.
+And if we want to loop over multiple lines we can add an extra scope to make sure we log the specific unique data for each iteration, following we log the *lineNumber* and a random *guid* and as you can see we still have the productnumber and market from before all with the **prop__** prefix.
 
 ![Properties added with Begin Scope](/assets/uploads/2019/08/functionsAi-viewCustomPeropertiesBeginScopeLoop.png)
 
