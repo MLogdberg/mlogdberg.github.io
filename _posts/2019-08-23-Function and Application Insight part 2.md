@@ -83,9 +83,9 @@ Then we can use the *StartOperation* in *TelemetryClient*, this will start the s
 An Operation is either a *DependencyOperation*, intended to mark dependency to other resources or a *RequestOperation* meant for marking a creation of a request.
 I will use a DependencyOperation in my case since it's the most alike operation for my purpose, I use it to mark that a more complex logic has been executed in my function and what the result of it was.
 
-I use this in several ways one is when I process alot of items in my Function to mark that they are executed, like processing a record in a list, another is hwne performing a complex transformation.
+I use this in several ways one is when I process alot of items in my Function to mark that they are executed, like processing a record in a list, another is when performing a complex transformation and so on.
 
-In my example bellow I'll demonstrate the usage of an operation by doing a simple for loop and simulating processing of a line and adding some valuable metadata. As a tip set *Data* the a serialized version fo the object that is processed so it's easier to understand/debug etc.
+In my example bellow I'll demonstrate the usage of an operation by doing a simple for loop and simulating processing of a line and adding some valuable metadata. As a tip set the *Data* property to the object that is going to be processed to easier understand what data is processed.
 
 ```csharp
 for (int i = 0; i < 10; i++)
@@ -117,7 +117,7 @@ op.Telemetry.Context.GlobalProperties.Add("LineID", i.ToString());
 ![Operation and custom Property](/assets/uploads/2019/08/functionsAi-operations-custom-properties.png)
 
 
-We can also set the Operation to have failed even if we continued the run, good for marking parts of failure while still needing to complete the rest of the run.
+We can also set the Operation to have failed even if we continued the run, good for highlight parts of failure while still needing to complete the rest of the run.
 
 ![Operation and custom Property](/assets/uploads/2019/08/functionsAi-operationfailed.png)
 
@@ -132,6 +132,6 @@ Read more:
 ## Summary:
 In this second part we have covered more advanced logging with TelemetryClient or to connect your current TelemetryClient logging to the End-To-End experience provided by Application Insights.
 
-The StartOperation is really powerfull when used to make visibility to what is happening, but I would like to have a third option for an Operation since using the Dependency sounds wrong when it's a section of the code in the same process, but it works!
+The StartOperation is really powerfull to highlight what is happening, but I would like to have a third option for an Operation since using the Dependency sounds wrong when it's a section of the code in the same process, but it works!
 
 This post is about how things can be done and hopefully this can be a guidance in creating a better logging experience, we want to avoid the developers "let me just attach my debugger" response to what is the problem with the flow running in production.
