@@ -22,7 +22,7 @@ The end scenario will look like the illustration bellow where we can grant acces
 
 I've created a video that will go thru all of this a link is provided bellow.
 
-[![Azure API Management and OAuth with Auth0](https://youtu.be/0ItzeSiHl24/0.jpg)](https://youtu.be/0ItzeSiHl24 "RBAC in Azure API Management - Click to watch")
+[![Azure API Management and OAuth with Auth0](http://youtu.be/0ItzeSiHl24/0.jpg)](https://youtu.be/0ItzeSiHl24 "RBAC in Azure API Management - Click to watch")
 
 Links used in the video:
 * [Validate JWT Token](https://docs.microsoft.com/en-us/azure/api-management/api-management-access-restriction-policies#validate-jwt
