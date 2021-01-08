@@ -2,7 +2,7 @@
 
 url: "https://mlogdberg.github.io/" # the base hostname & protocol for your site
 title: "Mattias Lögdberg"
-description: "Mattias Blog"
+description: "Mlogdberg Blog"
 permalink: /:title/	
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 paginate: 10
