@@ -1,6 +1,12 @@
 	body{background-color:#0F355B; font-family: 'Droid Sans', sans-serif; color:#fff;}
 	.container{background:#0F355B;width:100%}
-	.navbar{width:100%}
+	.navbar{width:100%;background-color: #0F355B;}
+	.navbar img {
+		height:max-content;
+	}
+	a {
+		color:#ababab
+	}
 
 	.cats{list-style: none; padding:0;}
 	.cats li{border-bottom:1px solid #194168; padding:8px; list-style-type:none;}
