@@ -8,8 +8,8 @@
 		color:#ababab
 	}
 
-	a.hover {
-		color:#ababab
+	a:hover {
+		color:#fff
 	}
 	
 	.cats{list-style: none; padding:0;}
