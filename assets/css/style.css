@@ -2,12 +2,19 @@
 	.container{background:#0F355B;width:100%}
 	.navbar{width:100%;background-color: #0F355B;}
 	.navbar img {
-		height:max-content;
+		height: 30px;
 	}
 	a {
 		color:#ababab
 	}
 
+	a.hover {
+		color:#ababab
+	}
+	
 	.cats{list-style: none; padding:0;}
-	.cats li{border-bottom:1px solid #194168; padding:8px; list-style-type:none;}
+	.cats li{border-bottom:1px solid #2972bb; padding:8px; list-style-type:none;}
+	.cats li:hover {
+		background-color: rgba(256, 256, 256, 0.1);
+	}
 	img{max-width: 100%;}
