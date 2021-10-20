@@ -9,9 +9,9 @@ description:
 permalink: /blog/2021/10/oauthtokengeneration
 ---
 
-Beginning to develop solutions where ouath is used as authentication mechanism is often easy due to alot of frameworks sorting out the heavy lifting. But I prefer to go in and see the raw data and make small changes/new requests to the apis to get data in order to understand what's going on. In those cases I use Postman and build up collections to easyily get the data I want and need. And the last few days I've gotten questions from multiple people around how I do it so I felt I should share a blog post about it since more might be interested.
+Beginning to develop solutions where ouath is used as authentication mechanism is often easy due to alot of frameworks sorting out the heavy lifting. But I prefer to go in and see the raw data and make small changes/new requests to the apis to get data in order to understand what's going on. In those cases I use Postman and build up collections to easily get the data I want and need. And the last few days I've gotten questions from multiple people around how I do it so I felt I should share a blog post about it since more might be interested.
 
-First of all this the way I'm doing it so if you have a better please fill in the chat since there are more than one way to solve this problem.
+First of all this is the way I'm doing it so if you have a better please fill in the chat since there are more than one way to solve this problem.
 I create a new Workspace "Token generation demo" in [Postman](https://www.postman.com/) (Workspace is a container for i.e. a project where I need to gather all requests and settings I need when working in this project).
 
 ![Postman Workspace start](/assets/uploads/2021/10/tokengeneration/newworkspace.png)
