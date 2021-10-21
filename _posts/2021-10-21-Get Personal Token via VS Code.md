@@ -77,4 +77,6 @@ This request is then sent to D365 with a token generated for you. As with Postma
 
 ## Summary:
 As a developer we often need to query systems like D365. When using the *"normal"* way with service principals we are using credentials anyone can use. We can share them amongst collegues and they will be stored on developers computers. But with the described approach we can stop that and start pushing developers to use their own credentials. Increasing security and control over who has access to our systems and data.  
-So not only is it awesome for a developer to get started more quicker and easier without the need of a service principal. It's also a better practice security wise. There are probobly many more ways to solve this, but this is one way and my thoughts.
+So not only is it awesome for a developer to get started more quicker and easier without the need of a service principal. It's also a better practice security wise. 
+
+There are probobly many more ways to solve this, but this is one way and my thoughts on it.
