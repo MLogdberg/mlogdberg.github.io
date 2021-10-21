@@ -18,13 +18,13 @@ So I started to look around and I found a good option for this, and that is what
 
 I found that **VS Code** has a nice extension that I will use in this case the [**Rest Client**](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
 
-So first intall the extension in VS code.
+So first install the extension in VS code.
 
 ![VsCode Rest Client Extension](/assets/uploads/2021/10/personaltoken/vscode_extension_rest_client.png)
 
-After this, let's create a new Workspace and start testing this out. As a standard I create a folder and add the requests there, easier to reuse and modify for new requests.
+After this, let's create a new Workspace and start testing this out. As a standard I create a folder and add the requests there, it's easier to reuse and modify for new requests.
 
-I've create a folder called *D365* and adding a file *GetQuotes.http*. the .http ending tells the Rest Client extension to VS Code it's a http request and therefore adds a button on the topp **Send Request** that will trigger the request.
+I've create a folder called *D365* and added a file *GetQuotes.http*. the .http ending tells the Rest Client extension to VS Code it's a http request and therefore adds a button on the top **Send Request** that will trigger the request.
 
 Structure and semantics in this file is very easy, tactic is *just write the request in raw format and the press send*.
 
@@ -49,7 +49,7 @@ As you can see we just write what we want to send, but enough of the basics let'
 When we want to use our own credentials in order to do calls to an AAD proteced resource like Dynamics D365.
 We can then use the built in variable **$aadToken** in the **Rest Client**, read more [here](https://marketplace.visualstudio.com/items?itemName=humao.rest-client#system-variables).
 
-That is simple to use we just nedd to add it to our Authorization header. Let's look at an example to get *Sales Quotation Headers* from D365.
+That is simple to use we just need to add it to our Authorization header. Let's look at an example to get *Sales Quotation Headers* from D365.
 ```
 GET https://{{yourD365Instance}}.cloudax.dynamics.com/data/SalesQuotationHeaders?cross-company=true&$top=3 HTTP/1.1
 Authorization: {{$aadToken}}
@@ -76,5 +76,5 @@ This request is then sent to D365 with a token generated for you. As with Postma
 
 
 ## Summary:
-As a developer we often need to request's to systems like D365. When using the *"normal"* way with service principals we are using credentials anyone can use. We can share them amongst collegues and they will be stored on developers computers. But with the describe approach we can stop that and start pushing developers to use their own credentials. Increasing security and control over who has access to our systems and data.  
-So not only is it awesome for a developer to get started more quickly and easier without the need of a service principal. It's also a better practice security wise.
+As a developer we often need to query systems like D365. When using the *"normal"* way with service principals we are using credentials anyone can use. We can share them amongst collegues and they will be stored on developers computers. But with the described approach we can stop that and start pushing developers to use their own credentials. Increasing security and control over who has access to our systems and data.  
+So not only is it awesome for a developer to get started more quicker and easier without the need of a service principal. It's also a better practice security wise. And there are probobly more ways to solve this, but this is my thoughts and one way to do it.
