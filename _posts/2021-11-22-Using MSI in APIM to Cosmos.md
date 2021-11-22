@@ -12,7 +12,7 @@ permalink: /blog/2021/22/usingmsifromapimtocosmos
 Quite recently Microsoft finally gave us RBAC roles for data plane access to Cosmos, this means that we now can use MSI to access data in Cosmos.
 
 
-So what's it all about? Well the best part is that we now can grant access to resources rather than using keys. This increases security and accessability since we don't need to manage the key any more and only specific resources can access our data. When we have switched to RBAC as the authentication method we can switch of the possibility to access data with primary/secondary keys,[read more here.](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-setup-rbac#disable-local-auth)
+So what's it all about? Well the best part is that we now can grant access to resources rather than using keys. This increases security and accessability since we don't need to manage the key any more and only specific resources can access our data. When we have switched to RBAC as the authentication method we can switch off the possibility to access data with primary/secondary keys,[read more here.](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-setup-rbac#disable-local-auth)
 
 So how do we do this? [Here is a guide from Microsoft](https://docs.microsoft.com/en-us/azure/cosmos-db/managed-identity-based-authentication) on how to use MSI with an Azure Function. And we will in this post use the same technique but from API Mangement to show the potential.
 
@@ -22,7 +22,7 @@ So how do we do this? [Here is a guide from Microsoft](https://docs.microsoft.co
 - Cosmos DB
 - Azure CLI
 
-First we need to grant the specific roles to our API Management identity. The role we want to assing is the [Cosmos DB Built-in Data Reader](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-setup-rbac#built-in-role-definitions). This role only have read access and that matches our *Least Previliges* thinking, when we only want to expose read we should also only have read access.
+First we need to grant the specific roles to our API Management identity. The role we want to assing is the [Cosmos DB Built-in Data Reader](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-setup-rbac#built-in-role-definitions). This role has read access and that matches our *Least Previliges* thinking, since when we only want to expose read operations we should only have read access.
 
 Adding this role is **not** as straight forward as I would like it, they are not possible to set via the Azure Portal yet. So we need to do some *PowerShell* scripting. Fortunally all scripts needed can be found at the Microsoft docs on [How to setup RBAC for Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-setup-rbac). I would recomend looking in there since they also provide how to create your own [custom role definitions](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-setup-rbac#role-definitions).
 
@@ -124,4 +124,4 @@ content-type: application/json
 
 
 ## Summary:
-The usage of **MSI** (Microsoft Service Identity) is a great feature on Cosmos, no need for storage keys. It's a win win thing, increased simplicity and also increased security. No credentials are stored and due to that they cannot be leaked. Forcing components to use **MSI** when connecting to the Cosmos could be done via setting *disableLocalAuth* to *true*: ```"disableLocalAuth": true``` ![read more](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-setup-rbac#disable-local-auth)
+The usage of **MSI** (Microsoft Service Identity) is a great feature on Cosmos, no need for storage keys. It's a win win thing, increased simplicity and also increased security. No credentials are stored and due to that they cannot be leaked. Forcing components to use **MSI** when connecting to the Cosmos could be done *disableLocalAuth* to *true*: ```"disableLocalAuth": true``` ![read more](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-setup-rbac#disable-local-auth)
