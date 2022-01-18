@@ -43,8 +43,9 @@ No before we created a SQL account, took keys from Cosmos, Service Bus etc, crea
 ### But isn't this making my development process a pain?
 No on the contrary, you as a developer don't need to gather all these credentials either, development and testing can be used with your own account. Making it easier to get started and another great benefit is that you cannot accidently keep credentials and access after an completed assignement or project. With good documentation it's also easier to get a new teammate up to speed. Another good thing is that we know that credentials are not wandering away when members leave the team.
 
-### What sould I think off
-You might end up in a situation where you usually could grant access yourself to different resources, since this the resource itself that granted the access you as a developer often had the full access to do so. But as soon as we start using MSI the access is granted by Azure AD and this is often locked down to developers. Since Authroization now need's to be given by a user with **Owner** or **User Access Administrator", to come around this you need to create a plan for your team how this should be done.
+### What should I think off
+As a developer you could usually grant yourself access to diffrent resources. When yousing MSI this is no longer the case, since the access is now granted by Azure AD and Azure AD access is often prohibited for developers.
+Authroization now need's to be given by a user with **Owner** or **User Access Administrator**, to overcome this you need to create a plan for your team how this should be done.
 
 
 A tip here is to create a Azure AD Group and add all developers to it that need specific access, remove them when they don't need it. An extra step would be creating a PIM group for it.
