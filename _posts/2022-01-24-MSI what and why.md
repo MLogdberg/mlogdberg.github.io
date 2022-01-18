@@ -38,7 +38,7 @@ What resources can we use authenticate to with MSI.
 
 
 ### Is this not what we accomplished before?
-No before we created a SQL account, took keys from Cosmos, Service Bus etc, create a service principal or a service user in AD to accomplish other acesses. All of these could potentiaally be simplified and changed to only give the resource the appropiate access rights. Note not all resources is supporting this yet, but this is an area where Microsoft has done some great gains last 6 months.
+No before we created a SQL account, took keys from Cosmos, Service Bus etc, create a service principal or a service user in AD to accomplish other acesses. All of these could potentially be simplified and changed to only give the resource the appropiate access rights. Note not all resources is supporting this yet, but this is an area where Microsoft has done some great gains last 6 months.
 
 ### But isn't this making my development process a pain?
 No on the contrary, you as a developer don't need to gather all these credentials either, development and testing can be used with your own account. Making it easier to get started and another great benefit is that you cannot accidently keep credentials and access after an completed assignement or project. With good documentation it's also easier to get a new teammate up to speed. Another good thing is that we know that credentials are not wandering away when members leave the team.
