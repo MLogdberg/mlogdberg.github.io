@@ -1,3 +1,7 @@
+/* Force navbar links to be white, overriding Bootstrap defaults */
+.navbar-default .navbar-nav>li>a {
+	color: #fff !important;
+}
 	body {
 		background: #f4f6fb;
 		font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
@@ -35,8 +39,9 @@
 		font-weight: 500;
 		transition: color 0.2s;
 	}
+
 	.navbar a:hover, .navbar a:focus {
-		color: #ffcb05;
+		color: #17406a;
 	}
 
 	a {
@@ -45,7 +50,7 @@
 		transition: color 0.2s;
 	}
 	a:hover, a:focus {
-		color: #ffcb05;
+		color: #17406a;
 	}
 
 	.cats {
