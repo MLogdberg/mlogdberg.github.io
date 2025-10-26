@@ -41,7 +41,7 @@ New-AzCosmosDBSqlRoleAssignment -AccountName $accountName `
 ```
  
 Let's get the parameters, first we get the cosmos values, the resource group and the account name of the Cosmos instance (*$resourceGroupName*,*$accountName*) both marked in circles.
-![Get Cosmos resourcegroup and account name](/assets/uploads/2021/11/msitocosmos/get_cosmo_data.PNG)
+![Get Cosmos resourcegroup and account name](/assets/uploads/2021/11/msitocosmos/get_cosmos_data.PNG)
 
 Then as we saw at the [Built in role definitions](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-setup-rbac#built-in-role-definitions) the role with name **Cosmos DB Built-in Data Reader** has Id **00000000-0000-0000-0000-000000000001**
 
