@@ -17,7 +17,6 @@ permalink: /videos
     <span class="video-year">{{ video.year }}</span>
     <h3>{{ video.title }}</h3>
     <p>{{ video.description }}</p>
-    <p class="video-why"><strong>Why it matters:</strong> {{ video.why }}</p>
     {% if video.note %}
     <p class="video-note">{{ video.note }}</p>
     {% endif %}
@@ -38,7 +37,6 @@ permalink: /videos
       <span class="video-source">{{ video.source }}</span>
       <h3>{{ video.title }}</h3>
       <p>{{ video.description }}</p>
-      <p class="video-why"><strong>Why it matters:</strong> {{ video.why }}</p>
       {% if video.note %}
       <p class="video-note">{{ video.note }}</p>
       {% endif %}
