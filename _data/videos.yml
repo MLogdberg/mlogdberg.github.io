@@ -12,15 +12,16 @@
   featured: true
 
 - title: "Azure Integration and Security: Challenges and Best Practices"
-  source: Turbo360 Podcast
+  source: YouTube
   year: 2024
   timeline_date: 2024-12-31
   verification_status: partial
-  help_needed: Confirm the exact public publish date and, if possible, a direct YouTube watch URL.
+  help_needed: Confirm the exact public publish date for z_ND2AkAOAA.
   why: Strong expert-profile content focused on networking and security tradeoffs in Azure integration.
   description: Mattias discusses Azure integration, networking, and security challenges with lessons from real delivery work and customer environments.
-  watch_url: https://turbo360.com/podcast/azure-integration-and-security-challenges-and-best-practices
-  link_label: Watch video
+  watch_url: https://www.youtube.com/watch?v=z_ND2AkAOAA
+  link_label: Watch on YouTube
+  note: Also available via the Turbo360 podcast page.
   featured: true
 
 - title: How's cloud PaaS services changing the way we handle security.
@@ -40,12 +41,12 @@
   year: 2024
   timeline_date: 2024-12-31
   verification_status: partial
-  help_needed: Confirm the exact YouTube publish date for DYObX1obIm4.
+  help_needed: Confirm whether GFLwqXtEibE is the preferred canonical YouTube upload and capture the exact publish date.
   why: Strong conference content for Mattias's speaker portfolio.
   description: Mattias breaks down PaaS networking choices in Azure Integration Services and explains when to use each option in real projects.
-  watch_url: https://www.youtube.com/watch?v=DYObX1obIm4
+  watch_url: https://www.youtube.com/watch?v=GFLwqXtEibE
   link_label: Watch on YouTube
-  note: Also published on Microsoft Learn as part of Logic Apps Community Day 2024.
+  note: Also published on Microsoft Learn as part of Logic Apps Community Day 2024. An alternate YouTube link was previously captured as DYObX1obIm4.
   featured: true
 
 - title: "Inside DevOps: Enhancing Integration Environments and Security"
@@ -59,6 +60,19 @@
   watch_url: https://turbo360.com/podcast/inside-devops-enhancing-integration-environments-and-security
   link_label: Watch video
   note: Year inferred from the episode's discussion of recent participation at INTEGRATE 2025.
+  featured: false
+
+- title: AIS common security pitfalls - Mattias Logdberg
+  source: YouTube
+  year: 2023
+  timeline_date: 2023-12-31
+  verification_status: partial
+  help_needed: Confirm the exact publish date and whether this should be labeled explicitly as an INTEGRATE 2023 session.
+  why: Strong technical talk content that broadens the security-focused speaking archive beyond networking and API authorization.
+  description: Mattias presents common Azure Integration Services security pitfalls and how teams can avoid them in real-world implementations.
+  watch_url: https://www.youtube.com/watch?v=rj_SifU-tWY
+  link_label: Watch on YouTube
+  note: Title verified from YouTube oEmbed metadata; year currently based on the surrounding INTEGRATE 2023 search context and still needs confirmation.
   featured: false
 
 - title: DevUP Talks 02 - 2026 Q1 Reflections with Ahmed Bayoumy, Sebastian Meyer and Andrew Wilson
