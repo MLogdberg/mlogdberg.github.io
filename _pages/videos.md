@@ -30,7 +30,7 @@ permalink: /videos
 ## Timeline
 
 <div class="timeline-list">
-{% assign timeline_videos = site.data.videos | where_exp: "item", "item.featured != true" | sort: "date" | reverse %}
+{% assign timeline_videos = site.data.videos | where_exp: "item", "item.featured != true" | sort: "timeline_date" | reverse %}
 {% for video in timeline_videos %}
   <article class="timeline-item">
     <div class="timeline-year">{{ video.date | default: video.year }}</div>
