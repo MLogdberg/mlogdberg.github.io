@@ -37,16 +37,17 @@
   featured: true
 
 - title: Master PaaS networking for AIS
-  source: YouTube
+  source: Integrate 2024
   year: 2024
-  timeline_date: 2024-12-31
+  date: 2024-06-10
+  timeline_date: 2024-06-10
   verification_status: partial
-  help_needed: Confirm whether GFLwqXtEibE is the preferred canonical YouTube upload and capture the exact publish date.
+  help_needed: Confirm whether GFLwqXtEibE is the preferred canonical recording link for this session and replace the agenda page if a stable direct video page is available.
   why: Strong conference content for Mattias's speaker portfolio.
   description: Mattias breaks down PaaS networking choices in Azure Integration Services and explains when to use each option in real projects.
-  watch_url: https://www.youtube.com/watch?v=GFLwqXtEibE
-  link_label: Watch on YouTube
-  note: Also published on Microsoft Learn as part of Logic Apps Community Day 2024. An alternate YouTube link was previously captured as DYObX1obIm4.
+  watch_url: https://turbo360.com/event/integrate-2024
+  link_label: Open event page
+  note: Verified from the official Integrate 2024 agenda page, which lists Mattias presenting this session on June 10, 2024. Related recordings also appear on YouTube and Microsoft Learn.
   featured: true
 
 - title: "Inside DevOps: Enhancing Integration Environments and Security"
@@ -62,17 +63,30 @@
   note: Year inferred from the episode's discussion of recent participation at INTEGRATE 2025.
   featured: false
 
+- title: Integration development challenges in a Cloud PaaS world
+  source: Integrate 2025
+  year: 2025
+  date: 2025-06-09
+  timeline_date: 2025-06-09
+  verification_status: verified
+  why: Strong current conference proof showing Mattias presenting practical lessons about integration architecture and delivery complexity in Azure.
+  description: Mattias explores the growing architectural and delivery challenges teams face when building and maintaining integrations in a cloud PaaS environment.
+  watch_url: https://turbo360.com/events/integrate-2025/
+  link_label: Open event page
+  note: Verified from the official Integrate 2025 agenda page, which lists Mattias presenting this session on June 9, 2025.
+  featured: false
+
 - title: AIS common security pitfalls - Mattias Logdberg
-  source: YouTube
+  source: Integrate 2023
   year: 2023
   timeline_date: 2023-12-31
   verification_status: partial
-  help_needed: Confirm the exact publish date and whether this should be labeled explicitly as an INTEGRATE 2023 session.
+  help_needed: Confirm the exact publish date from the public upload and replace the year-only timeline date if a verified session date is available.
   why: Strong technical talk content that broadens the security-focused speaking archive beyond networking and API authorization.
   description: Mattias presents common Azure Integration Services security pitfalls and how teams can avoid them in real-world implementations.
   watch_url: https://www.youtube.com/watch?v=rj_SifU-tWY
   link_label: Watch on YouTube
-  note: Title verified from YouTube oEmbed metadata; year currently based on the surrounding INTEGRATE 2023 search context and still needs confirmation.
+  note: Title verified from YouTube metadata; this upload is being treated as the public Integrate 2023 session recording, but the exact event/session date still needs confirmation.
   featured: false
 
 - title: DevUP Talks 02 - 2026 Q1 Reflections with Ahmed Bayoumy, Sebastian Meyer and Andrew Wilson
