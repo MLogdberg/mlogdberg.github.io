@@ -62,6 +62,129 @@
 		color: #17406a;
 	}
 
+	.page-content > :first-child {
+		margin-top: 0;
+	}
+
+	.page-content p {
+		margin: 0 0 16px;
+	}
+
+	.section-intro {
+		font-size: 1.05rem;
+		color: #4b5c73;
+	}
+
+	.profile-intro {
+		display: flex;
+		gap: 24px;
+		align-items: flex-start;
+		margin-bottom: 32px;
+	}
+
+	.profile-copy {
+		flex: 1 1 0;
+	}
+
+	.profile-photo {
+		flex: 0 0 240px;
+	}
+
+	.profile-photo img {
+		width: 100%;
+		margin: 0;
+	}
+
+	.video-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 18px;
+		margin: 24px 0 32px;
+	}
+
+	.video-card {
+		background: linear-gradient(180deg, #f9fbff 0%, #eef4fb 100%);
+		border: 1px solid #d8e4f0;
+		border-radius: 10px;
+		padding: 18px;
+		box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+	}
+
+	.video-card h3 {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-size: 1.2rem;
+		line-height: 1.35;
+	}
+
+	.video-card p:last-of-type {
+		margin-bottom: 0;
+	}
+
+	.video-source {
+		display: inline-block;
+		background: #dcecff;
+		color: #17406a;
+		border-radius: 999px;
+		padding: 4px 10px;
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+	}
+
+	.video-year {
+		display: inline-block;
+		margin-left: 8px;
+		color: #61748d;
+		font-size: 0.9rem;
+		font-weight: 700;
+	}
+
+	.video-link {
+		display: inline-block;
+		margin-top: 14px;
+		font-weight: 700;
+	}
+
+	.video-why {
+		color: #4b5c73;
+	}
+
+	.video-note {
+		font-size: 0.95rem;
+		color: #61748d;
+	}
+
+	.timeline-list {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+		margin: 24px 0 32px;
+	}
+
+	.timeline-item {
+		display: grid;
+		grid-template-columns: 88px 1fr;
+		gap: 18px;
+		align-items: start;
+	}
+
+	.timeline-year {
+		font-size: 1.1rem;
+		font-weight: 700;
+		color: #17406a;
+		padding-top: 6px;
+	}
+
+	.timeline-content {
+		background: linear-gradient(180deg, #fbfcfe 0%, #f1f6fb 100%);
+		border: 1px solid #d8e4f0;
+		border-radius: 10px;
+		padding: 18px;
+		box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+	}
+
 	.cats {
 		list-style: none;
 		padding: 0;
@@ -114,5 +237,19 @@
 		}
 		img {
 			margin: 8px 0;
+		}
+		.profile-intro {
+			flex-direction: column-reverse;
+		}
+		.profile-photo {
+			flex-basis: auto;
+			max-width: 240px;
+		}
+		.timeline-item {
+			grid-template-columns: 1fr;
+			gap: 10px;
+		}
+		.timeline-year {
+			padding-top: 0;
 		}
 	}
