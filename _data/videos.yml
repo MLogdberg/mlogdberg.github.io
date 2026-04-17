@@ -7,7 +7,7 @@
   link_label: Watch video
   featured: true
 
-- title: Azure Integration and Security: Challenges and Best Practices
+- title: "Azure Integration and Security: Challenges and Best Practices"
   source: Turbo360 Podcast
   year: 2024
   why: Strong expert-profile content focused on networking and security tradeoffs in Azure integration.
@@ -35,7 +35,7 @@
   note: Also published on Microsoft Learn as part of Logic Apps Community Day 2024.
   featured: true
 
-- title: Inside DevOps: Enhancing Integration Environments and Security
+- title: "Inside DevOps: Enhancing Integration Environments and Security"
   source: Turbo360 Podcast
   year: 2024
   why: Good supporting content that shows Mattias discussing delivery, environment quality, and security in practice.
@@ -156,7 +156,7 @@
   note: Verified from the embedded video link on the June 5, 2020 blog post.
   featured: false
 
-- title: API Governance - Modern API solutions in a digitalized world
+- title: "API Governance - Modern API solutions in a digitalized world"
   source: Integration User Group
   year: 2018
   why: Good archive session for demonstrating public speaking on API strategy and governance.
