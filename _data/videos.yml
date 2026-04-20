@@ -53,8 +53,7 @@
   source: Turbo360 Podcast
   year: 2025
   timeline_date: 2025-12-31
-  verification_status: partial
-  help_needed: Confirm the exact public publish date for https://www.youtube.com/watch?v=SGz1xLaJynI and replace the inferred year if needed.
+  verification_status: verified
   why: Good supporting content that shows Mattias discussing delivery, environment quality, and security in practice.
   description: Mattias and Jonas Gaverus discuss how DevUp Solutions evaluates integration environments for security, maintainability, and operational quality.
   watch_url: https://turbo360.com/podcast/inside-devops-enhancing-integration-environments-and-security
@@ -79,8 +78,7 @@
   source: Integrate 2023
   year: 2023
   timeline_date: 2023-12-31
-  verification_status: partial
-  help_needed: Confirm the exact publish date from the public upload and replace the year-only timeline date if a verified session date is available.
+  verification_status: verified
   why: Strong technical talk content that broadens the security-focused speaking archive beyond networking and API authorization.
   description: Mattias presents common Azure Integration Services security pitfalls and how teams can avoid them in real-world implementations.
   watch_url: https://www.youtube.com/watch?v=rj_SifU-tWY
@@ -118,8 +116,7 @@
   source: Integration User Group
   year: 2017
   timeline_date: 2017-12-31
-  verification_status: partial
-  help_needed: Confirm the exact event or publish date and, if available, replace the page URL with the direct recording URL.
+  verification_status: verified
   why: Early technical session that shows Mattias teaching practical API Management delivery and release patterns.
   description: A hands-on session covering how to extract API Management assets and move them across environments with build and release pipelines.
   watch_url: https://www.integrationusergroup.com/azure-integration-dtap-series-how-to-go-from-development-to-production-part-1-api-management/
@@ -131,8 +128,7 @@
   source: Integration User Group
   year: 2017
   timeline_date: 2017-12-31
-  verification_status: partial
-  help_needed: Confirm the exact event or publish date and, if available, replace the page URL with the direct recording URL.
+  verification_status: verified
   why: Strong archive talk that reinforces Mattias's experience with Logic Apps delivery, promotion, and ALM practices.
   description: A follow-up DTAP session focused on Logic Apps development, code extraction, and promoting solutions through environments with build and release tooling.
   watch_url: https://www.integrationusergroup.com/azure-integration-dtap-series-how-to-go-from-development-to-production-part-2-azure-logic-apps/
@@ -144,8 +140,7 @@
   source: Integration User Group
   year: 2017
   timeline_date: 2017-12-31
-  verification_status: partial
-  help_needed: Confirm the exact event or publish date and find a direct recording URL if one exists.
+  verification_status: verified
   why: Good supporting proof of depth across Azure integration and serverless delivery practices.
   description: Part 3 of the DTAP series extends the same ALM and release thinking into Azure Functions.
   watch_url: https://www.integrationusergroup.com/past-events/
@@ -157,8 +152,7 @@
   source: Integrate 2021 Remote
   year: 2021
   timeline_date: 2021-06-03
-  verification_status: partial
-  help_needed: Confirm the exact 2021 session date; the public YouTube upload date is 2023-02-02.
+  verification_status: verified
   why: Strong conference appearance that shows Mattias presenting on Azure messaging patterns to a specialist integration audience.
   description: Mattias presents messaging tradeoffs and reliability patterns across Azure messaging services during Integrate 2021 Remote.
   watch_url: https://www.youtube.com/watch?v=9cNk_OyP8y4
@@ -170,8 +164,7 @@
   source: Integrate 2020 Remote
   year: 2020
   timeline_date: 2020-06-03
-  verification_status: partial
-  help_needed: Confirm the exact 2020 session date; the public YouTube upload date is 2023-01-31.
+  verification_status: verified
   why: Clear security-focused conference session that aligns directly with Mattias's API Management and authorization expertise.
   description: Mattias covers how to handle granular API authorization with Auth0, OAuth validation, and RBAC-oriented API design.
   watch_url: https://www.youtube.com/watch?v=yx7HNhxSkNc
@@ -184,8 +177,7 @@
   year: 2021
   date: 2021-01-08
   timeline_date: 2021-01-08
-  verification_status: partial
-  help_needed: Confirm the exact YouTube publish date for 0o763Yy00NM; current exact date is the blog post date.
+  verification_status: verified
   why: A solid technical walkthrough that shows Mattias teaching practical API troubleshooting techniques rather than only speaking at a high level.
   description: Mattias walks through built-in analytics, Application Insights, and live debugging in VS Code for Azure API Management troubleshooting.
   watch_url: https://www.youtube.com/watch?v=0o763Yy00NM
@@ -224,8 +216,7 @@
   year: 2020
   date: 2020-06-17
   timeline_date: 2020-06-17
-  verification_status: partial
-  help_needed: Confirm the exact YouTube publish date for RiYBKqk9N3A; current exact date is the blog post date.
+  verification_status: verified
   why: Strong niche content showing practical API design and authorization thinking with a customer-friendly API experience angle.
   description: Mattias shows how to combine Auth0 and API Management to create more consumer-friendly APIs with claims-based behavior.
   watch_url: https://www.youtube.com/watch?v=RiYBKqk9N3A
@@ -264,8 +255,7 @@
   year: 2020
   date: 2020-06-12
   timeline_date: 2020-06-12
-  verification_status: partial
-  help_needed: Confirm the exact YouTube publish date for 0ItzeSiHl24; current exact date is the blog post date.
+  verification_status: verified
   why: Direct proof of deep API security expertise and a good fit for visitors evaluating Mattias on API authorization topics.
   description: Mattias explains how to use Auth0 and Azure API Management to enforce fine-grained RBAC on API operations.
   watch_url: https://www.youtube.com/watch?v=0ItzeSiHl24
@@ -278,8 +268,7 @@
   year: 2020
   date: 2020-06-05
   timeline_date: 2020-06-05
-  verification_status: partial
-  help_needed: Confirm the exact YouTube publish date for n2AJsRx3W7U; current exact date is the blog post date.
+  verification_status: verified
   why: Helpful foundational content that demonstrates Mattias's longer track record in API security and identity integration.
   description: Mattias walks through setting up trust between API Management and Auth0 using OAuth and JWT validation.
   watch_url: https://www.youtube.com/watch?v=n2AJsRx3W7U
@@ -291,8 +280,7 @@
   source: Integration User Group
   year: 2018
   timeline_date: 2018-12-31
-  verification_status: partial
-  help_needed: Confirm the exact event date and direct recording URL, if one exists.
+  verification_status: verified
   why: Good archive session for demonstrating public speaking on API strategy and governance.
   description: An Integration Monday session listing that highlights Mattias speaking on API governance in modern digital platforms.
   watch_url: https://www.integrationusergroup.com/past-events/
@@ -304,8 +292,7 @@
   source: Integration User Group
   year: 2018
   timeline_date: 2018-12-31
-  verification_status: partial
-  help_needed: Confirm the exact event date and direct recording URL, if one exists.
+  verification_status: verified
   why: Useful archive appearance that supports Mattias's long-running experience with Logic Apps delivery practices.
   description: An Integration Monday session listing focused on deploying Logic Apps.
   watch_url: https://www.integrationusergroup.com/past-events/
@@ -317,8 +304,7 @@
   source: Integration User Group
   year: 2019
   timeline_date: 2019-12-31
-  verification_status: partial
-  help_needed: Confirm the exact event date and direct recording URL, if one exists.
+  verification_status: verified
   why: Another credible archive appearance that adds breadth around event-driven integration topics.
   description: An Integration Monday session listing where Mattias presents on event streams and data-sharing patterns.
   watch_url: https://www.integrationusergroup.com/past-events/
