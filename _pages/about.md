@@ -31,7 +31,7 @@ permalink: /about
     <span class="video-source">{{ video.source }}</span>
     <h3>{{ video.title }}</h3>
     <p>{{ video.description }}</p>
-    <a class="video-link" href="{{ video.watch_url }}">Watch video</a>
+    <a class="video-link" href="{{ video.watch_url }}">{{ video.link_label | default: "Open source page" }}</a>
   </article>
 {% endif %}
 {% endfor %}
